@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A CA firm on one brain</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #0e1014; --panel: #14171c; --fg: #e8e8ea; --dim: #8a8f99; --line: #2b3038;
+    --in: #4fc1c9;     /* what comes in */
+    --brain: #e0a84a;  /* the brain: pages, graph, timeline */
+    --agent: #a98bf0;  /* the agent and its skills */
+    --gate: #e07aa8;   /* a person must say yes */
+    --ok: #6ccf7a;     /* a result */
+    --never: #e06a6a;  /* never */
+    --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+  :root[data-theme="light"] {
+    --bg: #f3f3f1; --panel: #ffffff; --fg: #16181d; --dim: #5d626c; --line: #d3d5da;
+    --in: #0f8b94; --brain: #a86f0f; --agent: #6b4fd1; --gate: #b8336f; --ok: #2b8a3e; --never: #c0392b;
+  }
+  html, body { margin: 0; background: var(--bg); }
+  .fig { max-width: 1600px; margin: 0 auto; }
+  svg { display: block; width: 100%; height: auto; background: var(--bg); }
+  svg text { font-family: var(--mono); fill: var(--fg); font-size: 18px; white-space: pre; }
+  svg .t { font-size: 44px; font-weight: 700; letter-spacing: .02em; }
+  svg .sub { font-size: 21px; fill: var(--dim); }
+  svg .sec { font-size: 24px; font-weight: 600; letter-spacing: .05em; }
+  svg .h { font-size: 21px; font-weight: 600; letter-spacing: .02em; }
+  svg .s { font-size: 16px; }
+  svg .xs { font-size: 14px; }
+  svg .lab { font-size: 13.5px; font-weight: 600; letter-spacing: .1em; fill: var(--dim); }
+  svg .d { fill: var(--dim); }
+  svg .b { font-weight: 600; }
+  svg .in { fill: var(--in); } svg .brain { fill: var(--brain); } svg .agent { fill: var(--agent); }
+  svg .gate { fill: var(--gate); } svg .ok { fill: var(--ok); } svg .never { fill: var(--never); }
+  svg .bx { fill: var(--panel); stroke: var(--line); stroke-width: 1.4; }
+  svg .bx-in { fill: var(--panel); stroke: var(--in); stroke-width: 1.6; }
+  svg .bx-brain { fill: var(--panel); stroke: var(--brain); stroke-width: 1.6; }
+  svg .bx-agent { fill: var(--panel); stroke: var(--agent); stroke-width: 1.6; }
+  svg .bx-gate { fill: var(--panel); stroke: var(--gate); stroke-width: 3.2; }
+  svg .bx-ok { fill: var(--panel); stroke: var(--ok); stroke-width: 1.6; }
+  svg .bx-never { fill: var(--panel); stroke: var(--never); stroke-width: 1.6; }
+  svg .ex { fill: none; stroke: var(--dim); stroke-width: 1.2; stroke-dasharray: 5 5; }
+  svg .ln { fill: none; stroke: var(--dim); stroke-width: 1.5; }
+  svg .rule { stroke: var(--line); stroke-width: 1; }
+  svg .rule-fg { stroke: var(--fg); stroke-width: 1.2; }
+  svg .tip { fill: var(--dim); }
+  svg .thead { fill: var(--line); opacity: .55; }
+</style>
+</head>
+<body>
+<div class="fig">
+<svg id="diagram" viewBox="0 0 1600 4120" role="img" aria-labelledby="dt" xmlns="http://www.w3.org/2000/svg">
+<title id="dt">A CA firm on one brain</title>
+<defs><marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z" class="tip"/></marker></defs>
+<text x="70" y="96" class="t">A CA FIRM ON ONE BRAIN</text>
+<text x="1530" y="96" class="s d" text-anchor="end">chartered accountancy · brain map</text>
+<text x="70" y="140" class="sub">how a practice runs client memory, notices and deadlines through an agent brain,</text>
+<text x="70" y="170" class="sub">so no position, due date or past reply is ever lost when a person is busy or gone</text>
+<line x1="70" y1="204" x2="1530" y2="204" class="rule-fg"/>
+<text x="70" y="262" class="sec">01 / THE SYSTEM</text>
+<text x="1530" y="262" class="s d" text-anchor="end">you speak plainly · the agent reads its skills · the brain keeps the facts</text>
+<rect x="70" y="298" width="340" height="160" class="bx"/>
+<text x="92" y="340" class="h">YOU</text>
+<text x="92" y="368" class="s d">partner · manager · article</text>
+<text x="92" y="406" class="s">forward a notice, ask a</text>
+<text x="92" y="432" class="s">question, say yes or no</text>
+<path d="M413,378 H438" class="ln" marker-end="url(#ah)"/>
+<rect x="443" y="298" width="340" height="160" class="bx-agent"/>
+<text x="465" y="340" class="h agent">THE AGENT</text>
+<text x="465" y="368" class="s d">reads skill files first</text>
+<text x="465" y="406" class="s">drafts, files pages, cites</text>
+<text x="465" y="432" class="s">sources · never sends alone</text>
+<path d="M786,378 H811" class="ln" marker-end="url(#ah)"/>
+<rect x="816" y="298" width="340" height="160" class="bx-brain"/>
+<text x="838" y="340" class="h brain">THE BRAIN</text>
+<text x="838" y="368" class="s d">pages + graph + timeline</text>
+<text x="838" y="406" class="s">hybrid search over markdown</text>
+<text x="838" y="432" class="s">typed links made on save</text>
+<path d="M1159,378 H1184" class="ln" marker-end="url(#ah)"/>
+<rect x="1189" y="298" width="340" height="160" class="bx"/>
+<text x="1211" y="340" class="h">YOUR TOOLS</text>
+<text x="1211" y="368" class="s d">email · portals · tally</text>
+<text x="1211" y="406" class="s">a person presses send,</text>
+<text x="1211" y="432" class="s">files, pays · not the brain</text>
+<text x="70" y="532" class="sec">02 / WHAT COMES IN</text>
+<text x="1530" y="532" class="s d" text-anchor="end">the tools the firm already uses · nothing new to learn</text>
+<rect x="70" y="568" width="466" height="158" class="bx-in"/>
+<text x="92" y="608" class="h">client emails</text>
+<text x="92" y="634" class="s d">notices · questions · files</text>
+<text x="92" y="668" class="s">· income-tax + GST notices</text>
+<text x="92" y="693" class="s">· client questions</text>
+<text x="92" y="718" class="s">· bank statements, invoices</text>
+<rect x="566" y="568" width="466" height="158" class="bx-in"/>
+<text x="588" y="608" class="h">portal downloads</text>
+<text x="588" y="634" class="s d">gst · income-tax · mca</text>
+<text x="588" y="668" class="s">· GSTR-2B, 2A, filed returns</text>
+<text x="588" y="693" class="s">· 26AS, AIS, demand notices</text>
+<text x="588" y="718" class="s">· MCA filings, DIN alerts</text>
+<rect x="1062" y="568" width="466" height="158" class="bx-in"/>
+<text x="1084" y="608" class="h">books + exports</text>
+<text x="1084" y="634" class="s d">tally · zoho · excel</text>
+<text x="1084" y="668" class="s">· trial balance, ledgers</text>
+<text x="1084" y="693" class="s">· purchase + sales registers</text>
+<text x="1084" y="718" class="s">· TDS and payroll sheets</text>
+<rect x="70" y="748" width="466" height="158" class="bx-in"/>
+<text x="92" y="788" class="h">calls + meetings</text>
+<text x="92" y="814" class="s d">notes · recordings</text>
+<text x="92" y="848" class="s">· what the client decided</text>
+<text x="92" y="873" class="s">· positions taken and why</text>
+<text x="92" y="898" class="s">· who does what, by when</text>
+<rect x="566" y="748" width="466" height="158" class="bx-in"/>
+<text x="588" y="788" class="h">whatsapp forwards</text>
+<text x="588" y="814" class="s d">pasted into the brain</text>
+<text x="588" y="848" class="s">· scanned notices</text>
+<text x="588" y="873" class="s">· photos of bills</text>
+<text x="588" y="898" class="s">· quick client questions</text>
+<rect x="1062" y="748" width="466" height="158" class="bx-in"/>
+<text x="1084" y="788" class="h">working papers</text>
+<text x="1084" y="814" class="s d">audit · assessment files</text>
+<text x="1084" y="848" class="s">· checklists and open queries</text>
+<text x="1084" y="873" class="s">· replies already filed</text>
+<text x="1084" y="898" class="s">· past assessment orders</text>
+<text x="70" y="980" class="sec">03 / HOW IT IS FILED</text>
+<text x="1530" y="980" class="s d" text-anchor="end">one primary home per fact · the folder name decides the page type</text>
+<rect x="70" y="1016" width="720" height="372" class="bx-brain"/>
+<text x="94" y="1056" class="lab">THE FOLDER TREE</text>
+<text x="94" y="1092" class="s">brain/</text>
+<text x="94" y="1119" class="s">  companies/   one page per client entity (co · LLP · firm)</text>
+<text x="94" y="1146" class="s">  people/      promoters · CFOs · client accountants · officers</text>
+<text x="94" y="1173" class="s">  projects/    one page per engagement: audit FY25-26 · GSTR-9 · ITR</text>
+<text x="94" y="1200" class="s">  concepts/    law, sections, circulars + the firm&#x27;s own positions</text>
+<text x="94" y="1227" class="s">  finance/     rates · due-date calendars · fee schedules</text>
+<text x="94" y="1254" class="s">  meetings/    one page per call or visit, dated</text>
+<text x="94" y="1281" class="s">  sources/     raw files: notices, returns, statements · never edited</text>
+<text x="94" y="1308" class="s">  inbox/       anything the rules cannot place yet</text>
+<line x1="94" y1="1342" x2="766" y2="1342" class="rule"/>
+<text x="94" y="1368" class="xs d">keep these names: the brain auto-links only folders it knows</text>
+<rect x="830" y="1016" width="700" height="372" class="bx-brain"/>
+<text x="854" y="1056" class="lab">ONE CLIENT PAGE · TWO LAYERS</text>
+<text x="854" y="1092" class="s b">companies/widget-traders.md</text>
+<text x="854" y="1119" class="s d">type: company · gstin: 27XXXXX0000X1Z5 · fy: apr-mar</text>
+<text x="854" y="1146" class="s">services: statutory audit · GSTR-9 · ITR</text>
+<text x="854" y="1173" class="s">contacts: [owner](people/r-shah) · [accounts](people/p-iyer)</text>
+<text x="854" y="1200" class="s">open: ASMT-10 notice · reply due 14 nov</text>
+<text x="854" y="1227" class="s">position: ITC claimed on 2B basis since FY24</text>
+<text x="854" y="1254" class="s d">&lt;!-- timeline --&gt;</text>
+<text x="854" y="1281" class="s">2026-10-28  ASMT-10 received · sources/notice-2026-10-28</text>
+<text x="854" y="1308" class="s">2026-09-20  GSTR-3B sep filed · ARN saved</text>
+<text x="854" y="1335" class="s">2026-07-15  statutory audit FY25-26 started</text>
+<line x1="854" y1="1342" x2="1506" y2="1342" class="rule"/>
+<text x="854" y="1368" class="xs d">top = what is true now · bottom = what happened, when</text>
+<text x="70" y="1462" class="sec">04 / THE GRAPH WIRES ITSELF</text>
+<text x="1530" y="1462" class="s d" text-anchor="end">every page save extracts links · zero model calls</text>
+<rect x="70" y="1498" width="720" height="262" class="bx-brain"/>
+<text x="94" y="1538" class="lab">TYPED EDGES MADE ON SAVE</text>
+<text x="94" y="1576" class="s">people/r-shah          ─ works_at ──▸  companies/widget-traders</text>
+<text x="94" y="1604" class="s">projects/audit-fy25-26 ─ mentions ──▸  people/p-iyer</text>
+<text x="94" y="1632" class="s">the-firm               ─ advises  ──▸  companies/widget-traders</text>
+<text x="94" y="1660" class="s">projects/asmt-10-reply ─ source   ──▸  sources/notice-2026-10-28</text>
+<text x="94" y="1688" class="s">meetings/2026-10-30    ─ attended ──▸  people/r-shah</text>
+<text x="94" y="1734" class="xs d">+ a dated timeline entry on every company and person named</text>
+<rect x="830" y="1498" width="700" height="262" class="bx-brain"/>
+<text x="854" y="1538" class="lab">QUESTIONS SEARCH ALONE CANNOT ANSWER</text>
+<text x="854" y="1576" class="s">· which clients have an open notice this quarter?</text>
+<text x="854" y="1604" class="s">· who at this client handles GST, and since when?</text>
+<text x="854" y="1632" class="s">· every engagement where we took the 2B position</text>
+<text x="854" y="1660" class="s">· what did we tell this client about TDS last year?</text>
+<text x="854" y="1688" class="s">· which engagements touch this one supplier?</text>
+<text x="854" y="1734" class="xs d">graph walk from one page, 1 to 2 hops, typed by edge</text>
+<text x="70" y="1834" class="sec">05 / HOW ONE NOTICE MOVES</text>
+<text x="1530" y="1834" class="s d" text-anchor="end">the brain does the work · a CA decides at the gate</text>
+<rect x="70" y="1870" width="335" height="150" class="bx-in"/>
+<text x="90" y="1912" class="h">1  NOTICE ARRIVES</text>
+<text x="90" y="1950" class="s">GST ASMT-10, widget traders</text>
+<text x="90" y="1977" class="s">forwarded by the client</text>
+<path d="M408,1945 H440" class="ln" marker-end="url(#ah)"/>
+<rect x="445" y="1870" width="335" height="150" class="bx-brain"/>
+<text x="465" y="1912" class="h">2  FILED</text>
+<text x="465" y="1950" class="s">under the client&#x27;s page</text>
+<text x="465" y="1977" class="s">due date on the timeline</text>
+<path d="M783,1945 H815" class="ln" marker-end="url(#ah)"/>
+<rect x="820" y="1870" width="335" height="150" class="bx-brain"/>
+<text x="840" y="1912" class="h">3  FACTS FOUND</text>
+<text x="840" y="1950" class="s">2B vs books, that period</text>
+<text x="840" y="1977" class="s">our past reply + position</text>
+<path d="M1158,1945 H1190" class="ln" marker-end="url(#ah)"/>
+<rect x="1195" y="1870" width="335" height="150" class="bx-brain"/>
+<text x="1215" y="1912" class="h">4  LAW PULLED</text>
+<text x="1215" y="1950" class="s">section · rule · circular</text>
+<text x="1215" y="1977" class="s">with the page it came from</text>
+<rect x="70" y="2100" width="335" height="150" class="bx-agent"/>
+<text x="90" y="2142" class="h">5  DRAFT WRITTEN</text>
+<text x="90" y="2180" class="s">reply + evidence list</text>
+<text x="90" y="2207" class="s">numbers show their source</text>
+<path d="M408,2175 H440" class="ln" marker-end="url(#ah)"/>
+<rect x="445" y="2100" width="335" height="150" class="bx-gate"/>
+<text x="465" y="2142" class="h gate">◆ 6 · A CA SAYS YES</text>
+<text x="465" y="2180" class="s">yes · change it · no</text>
+<text x="465" y="2207" class="s">never files on its own</text>
+<path d="M783,2175 H815" class="ln" marker-end="url(#ah)"/>
+<rect x="820" y="2100" width="335" height="150" class="bx-ok"/>
+<text x="840" y="2142" class="h ok">⚓ 7  SENT + RECORDED</text>
+<text x="840" y="2180" class="s">from the firm&#x27;s own login</text>
+<text x="840" y="2207" class="s">ARN saved on the timeline</text>
+<path d="M1158,2175 H1190" class="ln" marker-end="url(#ah)"/>
+<rect x="1195" y="2100" width="335" height="150" class="bx-brain"/>
+<text x="1215" y="2142" class="h">↺ 8  REMEMBERED</text>
+<text x="1215" y="2180" class="s">the position becomes a rule</text>
+<text x="1215" y="2207" class="s">next notice drafts faster</text>
+<path d="M1362,2025 V2060 H237 V2094" class="ln" marker-end="url(#ah)"/>
+<text x="70" y="2324" class="sec">06 / WHO SEES WHAT · WHERE IT RUNS</text>
+<text x="1530" y="2324" class="s d" text-anchor="end">one brain per partner or practice group · separation is physical</text>
+<rect x="70" y="2360" width="900" height="300" class="bx"/>
+<rect x="70" y="2360" width="900" height="50" class="thead"/>
+<text x="86" y="2392" class="lab"></text>
+<text x="256" y="2392" class="lab">partner brain</text>
+<text x="446" y="2392" class="lab">practice brain</text>
+<text x="656" y="2392" class="lab">law pages</text>
+<text x="806" y="2392" class="lab">other groups</text>
+<text x="86" y="2442" class="s b">partner</text>
+<text x="256" y="2442" class="s">✓ read + change</text>
+<text x="446" y="2442" class="s">✓ read · approves</text>
+<text x="656" y="2442" class="s">✓ read</text>
+<text x="806" y="2442" class="s">✕</text>
+<line x1="70" y1="2410" x2="970" y2="2410" class="rule"/>
+<text x="86" y="2492" class="s b">manager</text>
+<text x="256" y="2492" class="s">✕</text>
+<text x="446" y="2492" class="s">✓ read · suggests</text>
+<text x="656" y="2492" class="s">✓ read</text>
+<text x="806" y="2492" class="s">✕</text>
+<line x1="70" y1="2460" x2="970" y2="2460" class="rule"/>
+<text x="86" y="2542" class="s b">article</text>
+<text x="256" y="2542" class="s">✕</text>
+<text x="446" y="2542" class="s">✓ read · drafts</text>
+<text x="656" y="2542" class="s">✓ read</text>
+<text x="806" y="2542" class="s">✕</text>
+<line x1="70" y1="2510" x2="970" y2="2510" class="rule"/>
+<text x="86" y="2592" class="s b">client</text>
+<text x="256" y="2592" class="s">✕</text>
+<text x="446" y="2592" class="s">what a CA sends</text>
+<text x="656" y="2592" class="s">✕</text>
+<text x="806" y="2592" class="s">✕</text>
+<line x1="70" y1="2560" x2="970" y2="2560" class="rule"/>
+<text x="86" y="2642" class="s b">outsider</text>
+<text x="256" y="2642" class="s">✕</text>
+<text x="446" y="2642" class="s">✕</text>
+<text x="656" y="2642" class="s">✕</text>
+<text x="806" y="2642" class="s">✕</text>
+<line x1="70" y1="2610" x2="970" y2="2610" class="rule"/>
+<rect x="1010" y="2360" width="520" height="300" class="bx"/>
+<text x="1032" y="2396" class="lab">WHERE IT RUNS</text>
+<text x="1032" y="2428" class="xs d">start</text>
+<text x="1102" y="2428" class="s">one file on a firm machine · no server</text>
+<text x="1032" y="2455" class="xs d">grow</text>
+<text x="1102" y="2455" class="s">postgres + pgvector on your own box or a</text>
+<text x="1102" y="2482" class="s">managed DB in India · 1000+ files</text>
+<text x="1032" y="2509" class="xs d">access</text>
+<text x="1102" y="2509" class="s">no per-user locks inside one brain today,</text>
+<text x="1102" y="2536" class="s">so one brain per partner, no shared keys,</text>
+<text x="1102" y="2563" class="s">staff go through the agent, not a key</text>
+<text x="1032" y="2590" class="xs d">data</text>
+<text x="1102" y="2590" class="s">stays on the firm&#x27;s server · you own it</text>
+<text x="70" y="2734" class="sec">07 / THE RHYTHM</text>
+<text x="1530" y="2734" class="s d" text-anchor="end">scheduled jobs the brain runs for the firm</text>
+<rect x="70" y="2770" width="1460" height="260" class="bx"/>
+<text x="92" y="2803" class="lab">EVERY MORNING</text>
+<text x="330" y="2803" class="s">a due list per person: returns, replies, hearings · what is late</text>
+<line x1="70" y1="2822" x2="1530" y2="2822" class="rule"/>
+<text x="92" y="2855" class="lab">ALL DAY</text>
+<text x="330" y="2855" class="s">drafts wait in one approval list: yes, change it or no</text>
+<line x1="70" y1="2874" x2="1530" y2="2874" class="rule"/>
+<text x="92" y="2907" class="lab">EVERY NIGHT</text>
+<text x="330" y="2907" class="s">sync new files, extract links, embed, flag stale positions</text>
+<line x1="70" y1="2926" x2="1530" y2="2926" class="rule"/>
+<text x="92" y="2959" class="lab">EVERY MONDAY</text>
+<text x="330" y="2959" class="s">one memo per partner: filings done, notices open, fees to bill</text>
+<line x1="70" y1="2978" x2="1530" y2="2978" class="rule"/>
+<text x="92" y="3011" class="lab">EVERY MONTH</text>
+<text x="330" y="3011" class="s">a health check: dead links, orphan pages, coverage, what was learned</text>
+<text x="70" y="3104" class="sec">08 / ROLLOUT IN FIVE STEPS</text>
+<text x="1530" y="3104" class="s d" text-anchor="end">one partner first · prove retrieval before adding clients</text>
+<rect x="70" y="3140" width="268" height="150" class="bx-agent"/>
+<text x="88" y="3180" class="h">1 PILOT</text>
+<text x="88" y="3216" class="s">one partner&#x27;s clients</text>
+<text x="88" y="3241" class="s">local brain, the six</text>
+<text x="88" y="3266" class="s">folders above, no server</text>
+<path d="M341,3215 H363" class="ln" marker-end="url(#ah)"/>
+<rect x="368" y="3140" width="268" height="150" class="bx"/>
+<text x="386" y="3180" class="h">2 SEED</text>
+<text x="386" y="3216" class="s">client master from the</text>
+<text x="386" y="3241" class="s">tally or zoho export,</text>
+<text x="386" y="3266" class="s">one markdown page each</text>
+<path d="M639,3215 H661" class="ln" marker-end="url(#ah)"/>
+<rect x="666" y="3140" width="268" height="150" class="bx"/>
+<text x="684" y="3180" class="h">3 INGEST</text>
+<text x="684" y="3216" class="s">two years of notices,</text>
+<text x="684" y="3241" class="s">filings and call notes</text>
+<text x="684" y="3266" class="s">for those clients only</text>
+<path d="M937,3215 H959" class="ln" marker-end="url(#ah)"/>
+<rect x="964" y="3140" width="268" height="150" class="bx"/>
+<text x="982" y="3180" class="h">4 MEASURE</text>
+<text x="982" y="3216" class="s">20 real questions from</text>
+<text x="982" y="3241" class="s">the partner, scored on</text>
+<text x="982" y="3266" class="s">recall · fix schema 1st</text>
+<path d="M1235,3215 H1257" class="ln" marker-end="url(#ah)"/>
+<rect x="1262" y="3140" width="268" height="150" class="bx-agent"/>
+<text x="1280" y="3180" class="h">5 EXPAND</text>
+<text x="1280" y="3216" class="s">night jobs, email intake</text>
+<text x="1280" y="3241" class="s">next partner · postgres</text>
+<text x="1280" y="3266" class="s">when the brain outgrows</text>
+<text x="70" y="3364" class="sec">09 / NOT IN THE BOX · NON-NEGOTIABLES</text>
+<rect x="70" y="3400" width="710" height="232" class="bx"/>
+<text x="92" y="3436" class="lab">NOT IN THE BOX · BUILD IT OR KEEP YOUR TOOL</text>
+<text x="92" y="3470" class="s">· no tally, GST-portal or income-tax-portal connector:</text>
+<text x="92" y="3496" class="s">  write small deterministic collectors that drop files in</text>
+<text x="92" y="3522" class="s">· not a document or practice-management system:</text>
+<text x="92" y="3548" class="s">  signed workpapers stay in your DMS, the brain is memory</text>
+<text x="92" y="3574" class="s">· no per-user access rules inside one brain: split brains</text>
+<text x="92" y="3600" class="s">· no claim about audit-documentation retention standards</text>
+<rect x="820" y="3400" width="710" height="232" class="bx-never"/>
+<text x="842" y="3436" class="lab never">THE BRAIN NEVER</text>
+<text x="842" y="3470" class="s">✕ files a return or sends a reply without a CA&#x27;s yes</text>
+<text x="842" y="3496" class="s">✕ invents a number, a section or a date</text>
+<text x="842" y="3522" class="s">✕ shows a figure without the source it came from</text>
+<text x="842" y="3548" class="s">✕ shares a login: one person, one key</text>
+<text x="842" y="3574" class="s">✕ lets client data leave the firm&#x27;s server</text>
+<text x="842" y="3600" class="s">✕ keeps passwords, OTPs or DSC PINs in any page</text>
+<text x="70" y="3706" class="sec">EXAMPLE · ONE GST NOTICE, START TO FINISH</text>
+<text x="70" y="3750">1  the client forwards an ASMT-10: GSTR-3B vs 2B mismatch, reply within 30 days</text>
+<text x="70" y="3784">2  the brain files it under widget traders, puts 14 nov on the timeline, pulls the 2B match for that period</text>
+<text x="70" y="3818">3  it finds last year&#x27;s position on the same supplier and the circular the firm cited then</text>
+<text x="70" y="3852">4  the draft reply and evidence list land in the manager&#x27;s approval list · she changes two lines</text>
+<text x="70" y="3886">5  the partner says yes · it is filed from the firm&#x27;s login · ARN and date land on the client timeline</text>
+<text x="70" y="3920">6  monday: the partner&#x27;s memo shows 1 reply filed, 2 notices still open, follow-up due 28 nov</text>
+<line x1="70" y1="3978" x2="1530" y2="3978" class="rule-fg"/>
+<rect x="70" y="4010" width="36" height="24" class="bx-in"/>
+<text x="118" y="4030" class="s d">what comes in</text>
+<rect x="286" y="4010" width="36" height="24" class="bx-brain"/>
+<text x="334" y="4030" class="s d">the brain</text>
+<rect x="464" y="4010" width="36" height="24" class="bx-agent"/>
+<text x="512" y="4030" class="s d">the agent</text>
+<rect x="642" y="4010" width="36" height="24" class="bx-gate"/>
+<text x="690" y="4030" class="s d">◆ a CA must say yes</text>
+<rect x="916" y="4010" width="36" height="24" class="bx-ok"/>
+<text x="964" y="4030" class="s d">⚓ a result</text>
+<rect x="1104" y="4010" width="36" height="24" class="bx-never"/>
+<text x="1152" y="4030" class="s d">✕ never</text>
+<text x="70" y="4074" class="s d">↺ repeats · pages are markdown you can read without the brain · the brain is memory, the CA is judgment</text>
+<text x="1530" y="4074" class="s d" text-anchor="end">ca firm · brain map</text>
+</svg>
+</div>
+</body>
+</html>
