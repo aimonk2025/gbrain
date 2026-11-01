@@ -129,9 +129,9 @@ def poster():
 
     # ---------- header
     g.text(L, 96, "A CA FIRM ON ONE BRAIN", "t")
-    g.text(R, 96, "chartered accountancy · brain map", "s d", "end")
-    g.text(L, 140, "how a practice runs client memory, notices and deadlines through an agent brain,", "sub")
-    g.text(L, 170, "so no position, due date or past reply is ever lost when a person is busy or gone", "sub")
+    g.text(R, 96, "the whole practice · brain map", "s d", "end")
+    g.text(L, 140, "clients, work, knowledge, templates and strategy in one memory an agent can read and write,", "sub")
+    g.text(L, 170, "so no due date, position, template version or client fact depends on one person remembering", "sub")
     g.hr(204, "rule-fg")
 
     # ---------- 01 the system
@@ -140,10 +140,10 @@ def poster():
     bw, gap, bh = 340, 33, 160
     top = y + 36
     sysb = [
-        ("YOU", "partner · manager · article", ["forward a notice, ask a", "question, say yes or no"], "bx", ""),
-        ("THE AGENT", "reads skill files first", ["drafts, files pages, cites", "sources · never sends alone"], "bx-agent", "agent"),
+        ("YOU", "partner · manager · article", ["forward, ask, assign,", "review, say yes or no"], "bx", ""),
+        ("THE AGENT", "reads skill files first", ["drafts, files pages, fills", "templates · never sends alone"], "bx-agent", "agent"),
         ("THE BRAIN", "pages + graph + timeline", ["hybrid search over markdown", "typed links made on save"], "bx-brain", "brain"),
-        ("YOUR TOOLS", "email · portals · tally", ["a person presses send,", "files, pays · not the brain"], "bx", ""),
+        ("YOUR TOOLS", "email · portals · tally · dms", ["a person presses send,", "files, pays · not the brain"], "bx", ""),
     ]
     for i, (name, sub, body, cls, tc) in enumerate(sysb):
         x = L + i * (bw + gap)
@@ -155,118 +155,222 @@ def poster():
             g.path(f"M{x + bw + 3},{top + bh // 2} H{x + bw + gap - 5}")
     y = top + bh
 
-    # ---------- 02 what comes in
+    # ---------- 02 what the brain holds: five domains
     y += 74
-    g.section(y, "02 / WHAT COMES IN", "the tools the firm already uses · nothing new to learn")
-    cw3, g3, ch = (CW - 60) // 3, 30, 158
-    srcs = [
-        ("client emails", "notices · questions · files", ["· income-tax + GST notices", "· client questions", "· bank statements, invoices"]),
-        ("portal downloads", "gst · income-tax · mca", ["· GSTR-2B, 2A, filed returns", "· 26AS, AIS, demand notices", "· MCA filings, DIN alerts"]),
-        ("books + exports", "tally · zoho · excel", ["· trial balance, ledgers", "· purchase + sales registers", "· TDS and payroll sheets"]),
-        ("calls + meetings", "notes · recordings", ["· what the client decided", "· positions taken and why", "· who does what, by when"]),
-        ("whatsapp forwards", "pasted into the brain", ["· scanned notices", "· photos of bills", "· quick client questions"]),
-        ("working papers", "audit · assessment files", ["· checklists and open queries", "· replies already filed", "· past assessment orders"]),
-    ]
+    g.section(y, "02 / WHAT THE BRAIN HOLDS", "five domains · one primary home per fact · the folder decides the page type")
     top = y + 36
-    for i, (name, sub, det) in enumerate(srcs):
-        row, col = divmod(i, 3)
-        x = L + col * (cw3 + g3)
-        yy = top + row * (ch + 22)
-        g.rect(x, yy, cw3, ch, "bx-in")
-        g.text(x + 22, yy + 40, name, "h", maxw=cw3 - 44)
-        g.text(x + 22, yy + 66, sub, "s d", maxw=cw3 - 44)
-        g.lines(x + 22, yy + 100, det, "s", 25, maxw=cw3 - 44)
-    y = top + 2 * ch + 22
+    dw, dg, dh = 272, 25, 276
+    domains = [
+        ("CLIENTS", "companies/ · people/",
+         ["· entity master: PAN, GSTIN,", "  FY, registrations", "· services engaged + fees", "· contacts and their roles",
+          "· risk tier, history, notes", "· every notice, filing, call"], "bx-brain", "brain"),
+        ("WORK", "projects/ · tasks/",
+         ["· one page per engagement", "· recurring compliance jobs", "· tasks: owner, due, status",
+          "· checklists ticked per job", "· review gates and sign-off", "· billing note when done"], "bx-agent", "agent"),
+        ("KNOWLEDGE", "concepts/",
+         ["· acts, rules, circulars", "· the firm's own positions", "· SOPs: how we do each job",
+          "· checklists per service", "· past rulings relied on", "· lessons from corrections"], "bx-brain", "brain"),
+        ("TEMPLATES", "templates/",
+         ["· engagement letters", "· reply and representation", "  formats, audit reports",
+          "· onboarding kits, MIS packs", "· one page per template:", "  version, use, owner"], "bx-brain", "brain"),
+        ("STRATEGY", "strategy/ (partner only)",
+         ["· firm goals, service mix", "· pricing + fee realisation", "· client profitability",
+          "· staffing and capacity", "· growth and referral plan", "· decisions and why"], "bx-gate", "gate"),
+    ]
+    for i, (name, sub, body, cls, tc) in enumerate(domains):
+        x = L + i * (dw + dg)
+        g.rect(x, top, dw, dh, cls)
+        g.text(x + 18, top + 40, name, f"h {tc}".strip(), maxw=dw - 36)
+        g.text(x + 18, top + 66, sub, "s d", maxw=dw - 36)
+        g.hr(top + 84, "rule", x + 18, x + dw - 18)
+        g.lines(x + 18, top + 112, body, "xs", 24, maxw=dw - 36)
+    y = top + dh + 34
+    g.text(L, y, "also: meetings/ one page per call · finance/ rates and due-date calendars · sources/ raw files, never edited · inbox/ unplaced items", "s d", maxw=CW)
+    g.text(L, y + 28, "companies, people, projects, concepts, meetings, finance and sources auto-link out of the box", "xs d", maxw=CW)
+    g.text(L, y + 50, "tasks/, templates/ and strategy/ are the firm's own folders · one pattern line makes them link the same way", "xs d", maxw=CW)
+    y += 50
 
-    # ---------- 03 how it is filed
+    # ---------- 03 the client master
     y += 74
-    g.section(y, "03 / HOW IT IS FILED", "one primary home per fact · the folder name decides the page type")
+    g.section(y, "03 / THE CLIENT MASTER · ONE PAGE PER CLIENT", "top = true now · bottom = history")
     top = y + 36
     lw, rw, gp = 720, 700, 40
-    bh3 = 372
+    bh3 = 426
     g.rect(L, top, lw, bh3, "bx-brain")
-    g.text(L + 24, top + 40, "THE FOLDER TREE", "lab")
-    tree = [
-        "brain/",
-        "  companies/   one page per client entity (co · LLP · firm)",
-        "  people/      promoters · CFOs · client accountants · officers",
-        "  projects/    one page per engagement: audit FY25-26 · GSTR-9 · ITR",
-        "  concepts/    law, sections, circulars + the firm's own positions",
-        "  finance/     rates · due-date calendars · fee schedules",
-        "  meetings/    one page per call or visit, dated",
-        "  sources/     raw files: notices, returns, statements · never edited",
-        "  inbox/       anything the rules cannot place yet",
+    g.text(L + 24, top + 40, "companies/widget-traders.md", "s b")
+    page = [
+        ("type: company · pan: XXXXX0000X · gstin: 27XXXXX0000X1Z5", "d"),
+        ("fy: apr-mar · regd: gst, tds, msme · books: tally prime", "d"),
+        ("services: gstr-1/3b monthly · tds quarterly · itr · audit", ""),
+        ("fees: 18,000/month retainer + audit 60,000 · billed quarterly", ""),
+        ("contacts: [owner](people/r-shah) · [accounts](people/p-iyer)", ""),
+        ("risk: medium · late documents in q4 · pays within 30 days", ""),
+        ("position: ITC claimed on 2B basis since FY24", ""),
+        ("open: ASMT-10 reply due 14 nov · audit FY25-26 fieldwork", ""),
+        ("docs: engagement letter v3 (2026) · dsc with firm till mar", ""),
+        ("<!-- timeline -->", "d"),
+        ("2026-10-28  ASMT-10 received · sources/notice-2026-10-28", ""),
+        ("2026-10-20  GSTR-3B sep filed · ARN saved · invoice raised", ""),
     ]
-    g.lines(L + 24, top + 76, tree, "s", 27, maxw=lw - 48)
-    g.hr(top + 326, "rule", L + 24, L + lw - 24)
-    g.text(L + 24, top + 352, "keep these names: the brain auto-links only folders it knows", "xs d", maxw=lw - 48)
+    yy = top + 74
+    for s_, c in page:
+        g.text(L + 24, yy, s_, f"s {c}".strip(), maxw=lw - 48)
+        yy += 26
+    g.hr(top + 380, "rule", L + 24, L + lw - 24)
+    g.text(L + 24, top + 406, "numbers come from your billing and books exports · the brain links them", "xs d", maxw=lw - 48)
 
     rx = L + lw + gp
     g.rect(rx, top, rw, bh3, "bx-brain")
-    g.text(rx + 24, top + 40, "ONE CLIENT PAGE · TWO LAYERS", "lab")
-    page = [
-        ("companies/widget-traders.md", "b"),
-        ("type: company · gstin: 27XXXXX0000X1Z5 · fy: apr-mar", "d"),
-        ("services: statutory audit · GSTR-9 · ITR", ""),
-        ("contacts: [owner](people/r-shah) · [accounts](people/p-iyer)", ""),
-        ("open: ASMT-10 notice · reply due 14 nov", ""),
-        ("position: ITC claimed on 2B basis since FY24", ""),
-        ("<!-- timeline -->", "d"),
-        ("2026-10-28  ASMT-10 received · sources/notice-2026-10-28", ""),
-        ("2026-09-20  GSTR-3B sep filed · ARN saved", ""),
-        ("2026-07-15  statutory audit FY25-26 started", ""),
+    g.text(rx + 24, top + 40, "WHAT HANGS OFF THE CLIENT PAGE", "lab")
+    hang = [
+        "people/r-shah · people/p-iyer        who we talk to, about what",
+        "projects/wt-gstr3b-2026-10           this month's return job",
+        "projects/wt-audit-fy25-26            the audit engagement",
+        "projects/wt-asmt10-reply             the notice reply",
+        "templates/engagement-letter          v3 · signed 2026-04",
+        "concepts/positions/itc-2b-basis      the stand we take",
+        "meetings/2026-10-30-widget-traders   last call, decisions",
+        "sources/notice-2026-10-28.pdf        the raw notice",
+        "tasks/wt-*                           open items by owner",
     ]
-    yy = top + 76
-    for s, c in page:
-        g.text(rx + 24, yy, s, f"s {c}".strip(), maxw=rw - 48)
-        yy += 27
-    g.hr(top + 326, "rule", rx + 24, rx + rw - 24)
-    g.text(rx + 24, top + 352, "top = what is true now · bottom = what happened, when", "xs d", maxw=rw - 48)
+    g.lines(rx + 24, top + 76, hang, "s", 27, maxw=rw - 48)
+    g.hr(top + 380, "rule", rx + 24, rx + rw - 24)
+    g.text(rx + 24, top + 406, "every link above is a typed edge · ask the graph, not a folder search", "xs d", maxw=rw - 48)
     y = top + bh3
 
-    # ---------- 04 the graph wires itself
+    # ---------- 04 the work engine
     y += 74
-    g.section(y, "04 / THE GRAPH WIRES ITSELF", "every page save extracts links · zero model calls")
+    g.section(y, "04 / THE WORK ENGINE", "recurring compliance + one-off engagements + tasks · the morning list is built from this")
     top = y + 36
-    bh4 = 262
-    g.rect(L, top, lw, bh4, "bx-brain")
-    g.text(L + 24, top + 40, "TYPED EDGES MADE ON SAVE", "lab")
-    raw_edges = [
-        ("people/r-shah", "works_at", "companies/widget-traders"),
-        ("projects/audit-fy25-26", "mentions", "people/p-iyer"),
-        ("the-firm", "advises", "companies/widget-traders"),
-        ("projects/asmt-10-reply", "source", "sources/notice-2026-10-28"),
-        ("meetings/2026-10-30", "attended", "people/r-shah"),
+    bh4 = 420
+    g.rect(L, top, lw, bh4, "bx-agent")
+    g.text(L + 24, top + 40, "THE COMPLIANCE CALENDAR · finance/calendar.md", "lab")
+    cal = [
+        ("GSTR-1", "11th monthly", "every GST client"),
+        ("GSTR-3B", "20th monthly", "every GST client"),
+        ("TDS deposit", "7th monthly", "deductors"),
+        ("TDS return", "31 jul · oct · jan · may", "deductors"),
+        ("advance tax", "15 jun · sep · dec · mar", "taxpayers above limit"),
+        ("tax audit", "30 sep", "audit cases"),
+        ("ITR", "31 jul · 31 oct (audit)", "all"),
+        ("GSTR-9 / 9C", "31 dec", "turnover above limit"),
+        ("AOC-4 · MGT-7", "30 · 60 days from AGM", "companies"),
     ]
-    edges = [f"{a:<23}─ {t:<9}──▸  {b}" for a, t, b in raw_edges]
-    g.lines(L + 24, top + 78, edges, "s", 28, maxw=lw - 48)
-    g.text(L + 24, top + 236, "+ a dated timeline entry on every company and person named", "xs d", maxw=lw - 48)
+    yy = top + 76
+    for a, b, c in cal:
+        g.text(L + 24, yy, a, "s b", maxw=170)
+        g.text(L + 214, yy, b, "s", maxw=270)
+        g.text(L + 494, yy, c, "s d", maxw=lw - 518)
+        yy += 27
+    g.hr(top + 336, "rule", L + 24, L + lw - 24)
+    g.lines(L + 24, top + 362, ["dates live on one page you edit when the law changes · the brain",
+                                "spawns one job per client per cycle and puts it on the timeline"], "xs d", 22, maxw=lw - 48)
 
-    g.rect(rx, top, rw, bh4, "bx-brain")
-    g.text(rx + 24, top + 40, "QUESTIONS SEARCH ALONE CANNOT ANSWER", "lab")
-    qs = [
-        "· which clients have an open notice this quarter?",
-        "· who at this client handles GST, and since when?",
-        "· every engagement where we took the 2B position",
-        "· what did we tell this client about TDS last year?",
-        "· which engagements touch this one supplier?",
+    g.rect(rx, top, rw, bh4, "bx-agent")
+    g.text(rx + 24, top + 40, "ONE JOB · projects/wt-gstr3b-2026-10.md", "lab")
+    job = [
+        ("client: widget-traders · service: GSTR-3B · period: sep 2026", "d"),
+        ("owner: article a · reviewer: manager m · due: 20 oct", ""),
+        ("status: in review · started 12 oct · docs received 15 oct", ""),
+        ("checklist: concepts/checklists/gstr3b (9 of 11 ticked)", ""),
+        ("open: 2 purchase bills not in 2B · ask client", ""),
+        ("template: templates/client-query-gst v2", ""),
+        ("fee: in retainer · bill with quarter", ""),
+        ("<!-- timeline -->", "d"),
+        ("2026-10-15  books received · 2B pulled · match run", ""),
+        ("2026-10-18  draft 3B ready · sent to reviewer ◆", ""),
     ]
-    g.lines(rx + 24, top + 78, qs, "s", 28, maxw=rw - 48)
-    g.text(rx + 24, top + 236, "graph walk from one page, 1 to 2 hops, typed by edge", "xs d", maxw=rw - 48)
+    yy = top + 76
+    for s_, c in job:
+        g.text(rx + 24, yy, s_, f"s {c}".strip(), maxw=rw - 48)
+        yy += 26
+    g.hr(top + 336, "rule", rx + 24, rx + rw - 24)
+    g.lines(rx + 24, top + 362, ["views the brain gives you: by client · by staff · by service line",
+                                 "· by due date · what is late · what is waiting on the client"], "xs d", 22, maxw=rw - 48)
     y = top + bh4
 
-    # ---------- 05 how one notice moves
+    # ---------- 05 knowledge + template strategy
     y += 74
-    g.section(y, "05 / HOW ONE NOTICE MOVES", "the brain does the work · a CA decides at the gate")
+    g.section(y, "05 / KNOWLEDGE + TEMPLATE STRATEGY", "the firm's way of working, written once, used by every job")
+    top = y + 36
+    bh5 = 330
+    g.rect(L, top, lw, bh5, "bx-brain")
+    g.text(L + 24, top + 40, "KNOWLEDGE · concepts/", "lab")
+    kn = [
+        "law/         sections, rules, circulars · with source + date checked",
+        "positions/   the stand we take, when, why · who approved it",
+        "sops/        how we onboard, run an audit, reply to a notice",
+        "checklists/  per service: GSTR-3B, TDS, ITR, audit, ROC",
+        "lessons/     every correction a CA makes becomes a line here",
+        "",
+        "a page says 'not covered' when the firm has no position yet",
+        "stale check: anything older than its review date is flagged",
+    ]
+    g.lines(L + 24, top + 76, kn, "s", 27, maxw=lw - 48)
+    g.text(L + 24, top + 308, "the agent reads these before drafting · the draft cites the page it used", "xs d", maxw=lw - 48)
+
+    g.rect(rx, top, rw, bh5, "bx-brain")
+    g.text(rx + 24, top + 40, "TEMPLATES · templates/ · one page per template", "lab")
+    tp = [
+        "engagement-letter      v3 · use: new client · owner: partner",
+        "client-query-gst       v2 · use: 2B mismatch · owner: manager",
+        "asmt-10-reply          v4 · use: 3B vs 2B notice · reviewed sep",
+        "audit-report-pvt       v6 · use: pvt ltd audit · reviewed apr",
+        "representation-letter  v2 · use: every audit · owner: partner",
+        "monthly-mis            v1 · use: retainer clients · owner: m",
+        "",
+        "the agent fills a template from the client page, never by hand",
+    ]
+    g.lines(rx + 24, top + 76, tp, "s", 27, maxw=rw - 48)
+    g.text(rx + 24, top + 308, "a change a CA makes twice becomes the next version · usage logs on the client", "xs d", maxw=rw - 48)
+    y = top + bh5
+
+    # ---------- 06 strategy and the partner view
+    y += 74
+    g.section(y, "06 / STRATEGY · THE PARTNER VIEW", "the private layer · reads everything, is read by no one else")
+    top = y + 36
+    bh6 = 290
+    g.rect(L, top, lw, bh6, "bx-gate")
+    g.text(L + 24, top + 40, "STRATEGY PAGES · strategy/", "lab gate")
+    st = [
+        "goals-2026        revenue, service mix, clients to add or drop",
+        "pricing           retainer bands, hourly floor, scope rules",
+        "profitability     fees vs hours per client · from your billing export",
+        "capacity          who is loaded when · season plan · hiring",
+        "client-tiers      A/B/C by fee, risk, payment habit",
+        "decisions         what we decided, when, why · never deleted",
+        "referrals         who sends work, who we send to",
+    ]
+    g.lines(L + 24, top + 76, st, "s", 27, maxw=lw - 48)
+    g.text(L + 24, top + 272, "numbers are imported, not invented · every figure keeps its source file", "xs d", maxw=lw - 48)
+
+    g.rect(rx, top, rw, bh6, "bx-gate")
+    g.text(rx + 24, top + 40, "QUESTIONS THE PARTNER ASKS THE BRAIN", "lab gate")
+    pq = [
+        "· which clients take the most hours for the least fee?",
+        "· who is overloaded in the september audit season?",
+        "· which service line grew this year, which shrank?",
+        "· which clients have an open notice or a late payment?",
+        "· what did we decide about scope creep in march, and why?",
+        "· which templates have not been reviewed in a year?",
+        "· which positions do we take that a new circular affects?",
+    ]
+    g.lines(rx + 24, top + 76, pq, "s", 27, maxw=rw - 48)
+    g.text(rx + 24, top + 272, "answers cite pages · the brain says 'not in the brain' instead of guessing", "xs d", maxw=rw - 48)
+    y = top + bh6
+
+    # ---------- 07 how work moves
+    y += 74
+    g.section(y, "07 / HOW ANY PIECE OF WORK MOVES", "a return, a notice, a new client, an advisory ask · same eight steps")
     steps = [
-        ("1  NOTICE ARRIVES", ["GST ASMT-10, widget traders", "forwarded by the client"], "bx-in"),
-        ("2  FILED", ["under the client's page", "due date on the timeline"], "bx-brain"),
-        ("3  FACTS FOUND", ["2B vs books, that period", "our past reply + position"], "bx-brain"),
-        ("4  LAW PULLED", ["section · rule · circular", "with the page it came from"], "bx-brain"),
-        ("5  DRAFT WRITTEN", ["reply + evidence list", "numbers show their source"], "bx-agent"),
-        ("◆ 6 · A CA SAYS YES", ["yes · change it · no", "never files on its own"], "bx-gate"),
-        ("⚓ 7  SENT + RECORDED", ["from the firm's own login", "ARN saved on the timeline"], "bx-ok"),
-        ("↺ 8  REMEMBERED", ["the position becomes a rule", "next notice drafts faster"], "bx-brain"),
+        ("1  WORK ARRIVES", ["return due · notice · ask", "new client · partner idea"], "bx-in"),
+        ("2  FILED", ["under client + engagement", "owner, due date, status"], "bx-brain"),
+        ("3  CONTEXT FOUND", ["client history + position", "law, SOP, past lessons"], "bx-brain"),
+        ("4  TEMPLATE PULLED", ["the right version", "filled from the client page"], "bx-brain"),
+        ("5  WORK PREPARED", ["draft, working, checklist", "every number shows source"], "bx-agent"),
+        ("◆ 6 · A CA REVIEWS", ["yes · change it · no", "never files on its own"], "bx-gate"),
+        ("⚓ 7  DONE + LOGGED", ["sent or filed by a person", "timeline + billing note"], "bx-ok"),
+        ("↺ 8  REMEMBERED", ["lesson, template version,", "position, client note"], "bx-brain"),
     ]
     sw, sg, sh = 335, 40, 150
     r1 = y + 36
@@ -286,16 +390,16 @@ def poster():
     g.path(f"M{x4},{r1 + sh + 5} V{my} H{x5} V{r2 - 6}")
     y = r2 + sh
 
-    # ---------- 06 who sees what + where it runs
+    # ---------- 08 who sees what + where it runs
     y += 74
-    g.section(y, "06 / WHO SEES WHAT · WHERE IT RUNS", "one brain per partner or practice group · separation is physical")
+    g.section(y, "08 / WHO SEES WHAT · WHERE IT RUNS", "one brain per partner or practice group · separation is physical")
     top = y + 36
     tw = 900
-    cols = ["", "partner brain", "practice brain", "law pages", "other groups"]
-    cwid = [170, 190, 210, 150, 180]
+    cols = ["", "strategy", "clients + work", "knowledge", "other groups"]
+    cwid = [160, 180, 220, 190, 150]
     rows = [
-        ["partner", "✓ read + change", "✓ read · approves", "✓ read", "✕"],
-        ["manager", "✕", "✓ read · suggests", "✓ read", "✕"],
+        ["partner", "✓ read + change", "✓ read · approves", "✓ read + change", "✕"],
+        ["manager", "✕", "✓ read · suggests", "✓ read · suggests", "✕"],
         ["article", "✕", "✓ read · drafts", "✓ read", "✕"],
         ["client", "✕", "what a CA sends", "✕", "✕"],
         ["outsider", "✕", "✕", "✕", "✕"],
@@ -333,15 +437,16 @@ def poster():
         yy += 27
     y = top + th
 
-    # ---------- 07 the rhythm
+    # ---------- 09 the rhythm
     y += 74
-    g.section(y, "07 / THE RHYTHM", "scheduled jobs the brain runs for the firm")
+    g.section(y, "09 / THE RHYTHM", "scheduled jobs the brain runs for the firm")
     rhythm = [
-        ("EVERY MORNING", "a due list per person: returns, replies, hearings · what is late"),
-        ("ALL DAY", "drafts wait in one approval list: yes, change it or no"),
-        ("EVERY NIGHT", "sync new files, extract links, embed, flag stale positions"),
-        ("EVERY MONDAY", "one memo per partner: filings done, notices open, fees to bill"),
-        ("EVERY MONTH", "a health check: dead links, orphan pages, coverage, what was learned"),
+        ("EVERY MORNING", "a due list per person: returns, replies, hearings, client docs awaited · what is late"),
+        ("ALL DAY", "drafts and workings wait in one approval list: yes, change it or no"),
+        ("EVERY NIGHT", "sync new files, extract links, embed, spawn next cycle's jobs, flag stale positions"),
+        ("EVERY MONDAY", "one memo per partner: filings done, notices open, hours vs fees, fees to bill"),
+        ("EVERY MONTH", "client profitability, template review list, health check: dead links, orphans, coverage"),
+        ("EVERY QUARTER", "strategy review from the pages: goals vs actuals, capacity for next season, tiers"),
     ]
     rrh = 52
     top = y + 36
@@ -354,13 +459,13 @@ def poster():
         g.text(L + 260, yy + 33, body, "s", maxw=CW - 280)
     y = top + rrh * len(rhythm)
 
-    # ---------- 08 rollout
+    # ---------- 10 rollout
     y += 74
-    g.section(y, "08 / ROLLOUT IN FIVE STEPS", "one partner first · prove retrieval before adding clients")
+    g.section(y, "10 / ROLLOUT IN FIVE STEPS", "one partner first · prove retrieval before adding clients")
     roll = [
-        ("1 PILOT", ["one partner's clients", "local brain, the six", "folders above, no server"]),
-        ("2 SEED", ["client master from the", "tally or zoho export,", "one markdown page each"]),
-        ("3 INGEST", ["two years of notices,", "filings and call notes", "for those clients only"]),
+        ("1 PILOT", ["one partner's clients", "local brain, the folders", "above, no server yet"]),
+        ("2 SEED", ["client master from the", "tally, zoho and billing", "exports · one page each"]),
+        ("3 LOAD", ["calendar, checklists,", "templates, positions and", "two years of history"]),
         ("4 MEASURE", ["20 real questions from", "the partner, scored on", "recall · fix schema 1st"]),
         ("5 EXPAND", ["night jobs, email intake", "next partner · postgres", "when the brain outgrows"]),
     ]
@@ -375,9 +480,9 @@ def poster():
             g.path(f"M{x + rw5 + 3},{top + rh5 // 2} H{x + rw5 + rg5 - 5}")
     y = top + rh5
 
-    # ---------- 09 not in the box + non-negotiables
+    # ---------- 11 not in the box + never
     y += 74
-    g.section(y, "09 / NOT IN THE BOX · NON-NEGOTIABLES")
+    g.section(y, "11 / NOT IN THE BOX · NON-NEGOTIABLES")
     top = y + 36
     hw = (CW - 40) // 2
     bh9 = 232
@@ -385,9 +490,9 @@ def poster():
     g.text(L + 22, top + 36, "NOT IN THE BOX · BUILD IT OR KEEP YOUR TOOL", "lab")
     nib = [
         "· no tally, GST-portal or income-tax-portal connector:",
-        "  write small deterministic collectors that drop files in",
-        "· not a document or practice-management system:",
-        "  signed workpapers stay in your DMS, the brain is memory",
+        "  small collectors drop exports into sources/ on a schedule",
+        "· not a billing, time-sheet or document system: those stay,",
+        "  the brain imports their exports and links the facts",
         "· no per-user access rules inside one brain: split brains",
         "· no claim about audit-documentation retention standards",
     ]
@@ -398,7 +503,7 @@ def poster():
     g.text(nx + 22, top + 36, "THE BRAIN NEVER", "lab never")
     never = [
         "✕ files a return or sends a reply without a CA's yes",
-        "✕ invents a number, a section or a date",
+        "✕ invents a number, a section, a date or a fee",
         "✕ shows a figure without the source it came from",
         "✕ shares a login: one person, one key",
         "✕ lets client data leave the firm's server",
@@ -409,14 +514,15 @@ def poster():
 
     # ---------- example walk
     y += 74
-    g.section(y, "EXAMPLE · ONE GST NOTICE, START TO FINISH")
+    g.section(y, "EXAMPLE · ONE MONTH FOR ONE CLIENT, START TO FINISH")
     walk = [
-        "1  the client forwards an ASMT-10: GSTR-3B vs 2B mismatch, reply within 30 days",
-        "2  the brain files it under widget traders, puts 14 nov on the timeline, pulls the 2B match for that period",
-        "3  it finds last year's position on the same supplier and the circular the firm cited then",
-        "4  the draft reply and evidence list land in the manager's approval list · she changes two lines",
-        "5  the partner says yes · it is filed from the firm's login · ARN and date land on the client timeline",
-        "6  monday: the partner's memo shows 1 reply filed, 2 notices still open, follow-up due 28 nov",
+        "1  1 oct: the night job spawns widget traders' GSTR-3B job for september, owner article a, due 20 oct",
+        "2  the morning list shows it · on 15 oct books arrive, the brain pulls 2B, runs the match, two bills are missing",
+        "3  the agent fills client-query-gst v2 from the client page · the manager says yes · the client replies in a day",
+        "4  the draft 3B and workings go to the manager ◆ · she changes one head · the partner files it from the firm login",
+        "5  ARN, date and 'bill with quarter' land on the client timeline · the correction becomes a lesson line",
+        "6  28 oct: an ASMT-10 arrives · filed under the client, template v4 pulled, last year's position found, reply due 14 nov",
+        "7  monday memo: 1 return filed, 1 notice open, 11 hours on a retainer client this month, fee realisation flagged",
     ]
     end = g.lines(L, y + 44, walk, "", 34, maxw=CW)
 
@@ -424,20 +530,20 @@ def poster():
     fy = end + 24
     g.hr(fy, "rule-fg")
     ly = fy + 52
-    items = [("bx-in", "what comes in"), ("bx-brain", "the brain"), ("bx-agent", "the agent"),
-             ("bx-gate", "◆ a CA must say yes"), ("bx-ok", "⚓ a result"), ("bx-never", "✕ never")]
+    items = [("bx-in", "what comes in"), ("bx-brain", "the brain"), ("bx-agent", "the agent · work"),
+             ("bx-gate", "◆ partner only · a CA must say yes"), ("bx-ok", "⚓ a result"), ("bx-never", "✕ never")]
     x = L
     for cls, lab in items:
         g.rect(x, ly - 20, 36, 24, cls)
         g.text(x + 48, ly, lab, "s d")
         x += 48 + int(len(lab) * 9.6) + 44
     g.text(L, ly + 44, "↺ repeats · pages are markdown you can read without the brain · the brain is memory, the CA is judgment", "s d")
-    g.text(R, ly + 44, "ca firm · brain map", "s d", "end")
+    g.text(R, ly + 44, "the whole practice · brain map", "s d", "end")
     h = ly + 90
 
     for w_ in g.warn:
         print("WARN", w_)
-    title = "A CA firm on one brain"
+    title = "A CA firm on one brain: the whole practice"
     html = HEAD.format(title=title, w=W, h=h) + "\n".join(g.out) + "\n" + TAIL
     (HERE / "01-ca-firm-brain.html").write_text(html, encoding="utf-8")
     print("wrote 01-ca-firm-brain.html", W, "x", h)
