@@ -128,21 +128,21 @@ def poster():
     g = Svg()
 
     # ---------- header
-    g.text(L, 96, "A CA FIRM ON ONE BRAIN", "t")
-    g.text(R, 96, "built on gbrain · open source, MIT", "s d", "end")
-    g.text(L, 140, "clients, work, knowledge, templates and strategy in one memory an agent can read and write,", "sub")
-    g.text(L, 170, "so no due date, position, template version or client fact depends on one person remembering", "sub")
+    g.text(L, 96, "A CA FIRM ON FORESIGHTS BRAIN", "t")
+    g.text(R, 96, "foresights brain · built for CA firms", "s d", "end")
+    g.text(L, 140, "context, knowledge and memory for every client, built up as the work happens, with Claude doing the reading,", "sub")
+    g.text(L, 170, "the drafting and the filing of pages · start with one folder, no migration, no new software for the team", "sub")
     g.hr(204, "rule-fg")
 
     # ---------- 01 the system
     y = 262
-    g.section(y, "01 / THE SYSTEM", "you speak plainly · the agent reads its skills · the brain keeps the facts")
+    g.section(y, "01 / THE SYSTEM", "you speak plainly · Claude reads the CA skills · the brain keeps the facts")
     bw, gap, bh = 340, 33, 160
     top = y + 36
     sysb = [
         ("YOU", "partner · manager · article", ["forward, ask, assign,", "review, say yes or no"], "bx", ""),
-        ("THE AGENT", "reads skill files first", ["drafts, files pages, fills", "templates · never sends alone"], "bx-agent", "agent"),
-        ("THE BRAIN", "pages + graph + timeline", ["hybrid search over markdown", "typed links made on save"], "bx-brain", "brain"),
+        ("CLAUDE", "reads the CA skills first", ["drafts, files pages, fills", "templates · never sends alone"], "bx-agent", "agent"),
+        ("FORESIGHTS BRAIN", "pages + graph + timeline", ["hybrid search over markdown", "typed links made on save"], "bx-brain", "brain"),
         ("YOUR TOOLS", "email · portals · tally · dms", ["a person presses send,", "files, pays · not the brain"], "bx", ""),
     ]
     for i, (name, sub, body, cls, tc) in enumerate(sysb):
@@ -155,17 +155,17 @@ def poster():
             g.path(f"M{x + bw + 3},{top + bh // 2} H{x + bw + gap - 5}")
     y = top + bh
 
-    # ---------- 02 what powers it: gbrain
+    # ---------- 02 what powers it: brain
     y += 74
-    g.section(y, "02 / WHAT POWERS IT · GBRAIN", "the engine under the poster · every item below is a shipped command or module")
+    g.section(y, "02 / WHAT POWERS IT · FORESIGHTS BRAIN", "the engine under the poster · every item below is a shipped command or module")
     fw, fg_, fh = (CW - 60) // 3, 30, 266
     feats = [
         ("ENGINES + STORAGE", "pglite · postgres + pgvector",
          ["· PGLite: embedded Postgres in one file, no server",
           "· Postgres + pgvector for scale: Supabase or own",
-          "· gbrain migrate --to supabase | pglite, both ways",
+          "· brain migrate --to supabase | pglite, both ways",
           "· markdown is the source of truth, DB is the index",
-          "· page versions kept · gbrain revert to any one",
+          "· page versions kept · brain revert to any one",
           "· raw data store for exports, files, attachments",
           "· S3, Supabase Storage or local disk for files"], "bx-brain"),
         ("SEARCH", "hybrid · graph-aware · measurable",
@@ -173,27 +173,27 @@ def poster():
           "· intent classifier: entity, time, event, general",
           "· multi-query expansion, backlink boost, dedup",
           "· keyword-only mode needs no API key at all",
-          "· gbrain eval: precision, recall, MRR, nDCG on",
+          "· brain eval: precision, recall, MRR, nDCG on",
           "  your own 20 questions, A/B two configs",
-          "· published benchmark: recall@5 83% to 95%"], "bx-brain"),
+          "· benchmarked: recall@5 83% to 95% with the graph"], "bx-brain"),
         ("KNOWLEDGE GRAPH", "typed links · timeline · zero LLM",
          ["· every page save extracts links: works_at,",
           "  advises, attended, source, mentions, founded",
           "· dated timeline entries per company and person",
-          "· gbrain graph-query <slug> --depth 2 --type T",
-          "· gbrain orphans: pages nobody links to",
+          "· brain graph-query <slug> --depth 2 --type T",
+          "· brain orphans: pages nobody links to",
           "· backlink checker and fixer, dead-link audit",
-          "· gbrain extract links|timeline over fs or db"], "bx-brain"),
-        ("AGENT SURFACE", "one contract · cli + mcp · 26 skills",
+          "· brain extract links|timeline over fs or db"], "bx-brain"),
+        ("CLAUDE + CA SKILLS", "one contract · cli + mcp · ca skill pack",
          ["· 41 operations defined once, CLI and MCP",
           "  server both generated from that contract",
-          "· MCP over stdio for Claude Code, Cursor, any",
-          "  client · remote MCP with bearer tokens",
-          "· 26 skills: brain-ops, query, enrich, meeting-",
-          "  ingestion, citation-fixer, maintain, reports,",
-          "  cron-scheduler, data-research, soul-audit"], "bx-agent"),
+          "· Claude connects over MCP, local or remote",
+          "  with bearer tokens · no other UI needed",
+          "· CA skill pack: client-onboard, return-cycle,",
+          "  notice-reply, audit-file, template-fill,",
+          "  monday-memo, position-check, fee-review"], "bx-agent"),
         ("INGESTION", "files · folders · audio · recipes",
-         ["· gbrain import <dir> with resume and workers",
+         ["· brain import <dir> with resume and workers",
           "· live sync: a watched folder stays indexed",
           "· 3-tier chunking: recursive, semantic, LLM-guided",
           "· audio transcription: Groq Whisper or OpenAI",
@@ -201,12 +201,12 @@ def poster():
           "· file upload with path confinement for agents",
           "· data-research: YAML recipe, email to tracker"], "bx-in"),
         ("OPERATIONS", "runs itself · checks itself",
-         ["· gbrain autopilot --install: sync, extract, embed",
+         ["· brain autopilot --install: sync, extract, embed",
           "· Minions job queue: retries, backoff, timeouts,",
           "  parent-child fan-out, stall rescue, idempotency",
-          "· gbrain doctor --fix: health checks, auto-repair",
+          "· brain doctor --fix: health checks, auto-repair",
           "· brain score 0-100: embeds, links, time, orphans",
-          "· gbrain upgrade with migrations + a repair trail",
+          "· brain upgrade with migrations + a repair trail",
           "· lint, publish --password (encrypted HTML page)"], "bx-agent"),
     ]
     top = y + 36
@@ -220,9 +220,31 @@ def poster():
         g.lines(x + 20, yy + 94, det, "xs", 22, maxw=fw - 40)
     y = top + 2 * fh + 22 + 40
     g.rect(L, y - 24, CW, 84, "ex")
-    g.text(L + 22, y + 6, "gbrain init  ·  gbrain import ./brain  ·  gbrain query \"open notices this quarter\"  ·  gbrain graph-query widget-traders --depth 2", "s", maxw=CW - 44)
-    g.text(L + 22, y + 36, "gbrain autopilot --install  ·  gbrain jobs submit  ·  gbrain doctor --fix  ·  gbrain eval  ·  gbrain serve  (MCP for the agent)", "s", maxw=CW - 44)
+    g.text(L + 22, y + 6, "brain init  ·  brain import ./clients  ·  brain query \"open notices this quarter\"  ·  brain graph-query widget-traders --depth 2", "s", maxw=CW - 44)
+    g.text(L + 22, y + 36, "brain autopilot --install  ·  brain jobs submit  ·  brain doctor --fix  ·  brain eval  ·  brain serve  (MCP for Claude)", "s", maxw=CW - 44)
     y += 60
+
+    # built for CA firms: what Claude loads before every job
+    y += 50
+    g.text(L, y, "BUILT FOR CA FIRMS · WHAT CLAUDE LOADS BEFORE EVERY JOB", "lab")
+    chips = [
+        ("CA FOLDER SCHEMA", ["clients, work, law,", "templates, strategy"]),
+        ("COMPLIANCE CALENDAR", ["GST, TDS, ITR, audit,", "ROC due dates"]),
+        ("SERVICE CHECKLISTS", ["one per job type,", "ticked per job"]),
+        ("FIRM POSITIONS", ["the stands the firm", "takes, and why"]),
+        ("TEMPLATE PACK", ["letters, replies, MIS,", "reports · versioned"]),
+        ("NEVER-RULES", ["no filing, no sending,", "no guessing"]),
+    ]
+    cw6 = (CW - 5 * 18) // 6
+    top = y + 20
+    for i, (name, sub) in enumerate(chips):
+        x = L + i * (cw6 + 18)
+        g.rect(x, top, cw6, 100, "bx-agent")
+        g.text(x + 14, top + 34, name, "lab", maxw=cw6 - 28)
+        g.lines(x + 14, top + 62, sub, "xs", 20, maxw=cw6 - 28)
+    y = top + 100
+    g.text(L, y + 34, "same engine, loaded with the firm's way of working · Claude never starts a job without reading these", "xs d", maxw=CW)
+    y += 34
 
     # ---------- 03 what the brain holds: five domains
     y += 74
@@ -255,8 +277,8 @@ def poster():
         g.lines(x + 18, top + 112, body, "xs", 24, maxw=dw - 36)
     y = top + dh + 34
     g.text(L, y, "also: meetings/ one page per call · finance/ rates and due-date calendars · sources/ raw files, never edited · inbox/ unplaced items", "s d", maxw=CW)
-    g.text(L, y + 28, "companies, people, projects, concepts, meetings, finance and sources auto-link out of the box", "xs d", maxw=CW)
-    g.text(L, y + 50, "tasks/, templates/ and strategy/ are the firm's own folders · one pattern line makes them link the same way", "xs d", maxw=CW)
+    g.text(L, y + 28, "companies, people, projects, concepts, meetings, finance and sources auto-link on every save", "xs d", maxw=CW)
+    g.text(L, y + 50, "tasks/, templates/ and strategy/ come with the CA setup and link the same way", "xs d", maxw=CW)
     y += 50
 
     # ---------- 03 the client master
@@ -611,8 +633,8 @@ def poster():
         g.rect(x, ly - 20, 36, 24, cls)
         g.text(x + 48, ly, lab, "s d")
         x += 48 + int(len(lab) * 9.6) + 44
-    g.text(L, ly + 44, "↺ repeats · pages are markdown you can read without gbrain · the brain is memory, the CA is judgment", "s d")
-    g.text(R, ly + 74, "built on gbrain · github.com/garrytan/gbrain · MIT", "s d", "end")
+    g.text(L, ly + 44, "↺ repeats · pages are markdown you can read without the brain · the brain is memory, the CA is judgment", "s d")
+    g.text(R, ly + 74, "foresights brain · for CA firms", "s d", "end")
     h = ly + 118
 
     for w_ in g.warn:

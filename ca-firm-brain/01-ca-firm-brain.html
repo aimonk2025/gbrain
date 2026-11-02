@@ -54,16 +54,16 @@
 </head>
 <body>
 <div class="fig">
-<svg id="diagram" viewBox="0 0 1600 6146" role="img" aria-labelledby="dt" xmlns="http://www.w3.org/2000/svg">
+<svg id="diagram" viewBox="0 0 1600 6350" role="img" aria-labelledby="dt" xmlns="http://www.w3.org/2000/svg">
 <title id="dt">A CA firm on one brain: the whole practice</title>
 <defs><marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L8,4 L0,8 z" class="tip"/></marker></defs>
-<text x="70" y="96" class="t">A CA FIRM ON ONE BRAIN</text>
-<text x="1530" y="96" class="s d" text-anchor="end">built on gbrain · open source, MIT</text>
-<text x="70" y="140" class="sub">clients, work, knowledge, templates and strategy in one memory an agent can read and write,</text>
-<text x="70" y="170" class="sub">so no due date, position, template version or client fact depends on one person remembering</text>
+<text x="70" y="96" class="t">A CA FIRM ON FORESIGHTS BRAIN</text>
+<text x="1530" y="96" class="s d" text-anchor="end">foresights brain · built for CA firms</text>
+<text x="70" y="140" class="sub">context, knowledge and memory for every client, built up as the work happens, with Claude doing the reading,</text>
+<text x="70" y="170" class="sub">the drafting and the filing of pages · start with one folder, no migration, no new software for the team</text>
 <line x1="70" y1="204" x2="1530" y2="204" class="rule-fg"/>
 <text x="70" y="262" class="sec">01 / THE SYSTEM</text>
-<text x="1530" y="262" class="s d" text-anchor="end">you speak plainly · the agent reads its skills · the brain keeps the facts</text>
+<text x="1530" y="262" class="s d" text-anchor="end">you speak plainly · Claude reads the CA skills · the brain keeps the facts</text>
 <rect x="70" y="298" width="340" height="160" class="bx"/>
 <text x="92" y="340" class="h">YOU</text>
 <text x="92" y="368" class="s d">partner · manager · article</text>
@@ -71,13 +71,13 @@
 <text x="92" y="432" class="s">review, say yes or no</text>
 <path d="M413,378 H438" class="ln" marker-end="url(#ah)"/>
 <rect x="443" y="298" width="340" height="160" class="bx-agent"/>
-<text x="465" y="340" class="h agent">THE AGENT</text>
-<text x="465" y="368" class="s d">reads skill files first</text>
+<text x="465" y="340" class="h agent">CLAUDE</text>
+<text x="465" y="368" class="s d">reads the CA skills first</text>
 <text x="465" y="406" class="s">drafts, files pages, fills</text>
 <text x="465" y="432" class="s">templates · never sends alone</text>
 <path d="M786,378 H811" class="ln" marker-end="url(#ah)"/>
 <rect x="816" y="298" width="340" height="160" class="bx-brain"/>
-<text x="838" y="340" class="h brain">THE BRAIN</text>
+<text x="838" y="340" class="h brain">FORESIGHTS BRAIN</text>
 <text x="838" y="368" class="s d">pages + graph + timeline</text>
 <text x="838" y="406" class="s">hybrid search over markdown</text>
 <text x="838" y="432" class="s">typed links made on save</text>
@@ -87,16 +87,16 @@
 <text x="1211" y="368" class="s d">email · portals · tally · dms</text>
 <text x="1211" y="406" class="s">a person presses send,</text>
 <text x="1211" y="432" class="s">files, pays · not the brain</text>
-<text x="70" y="532" class="sec">02 / WHAT POWERS IT · GBRAIN</text>
+<text x="70" y="532" class="sec">02 / WHAT POWERS IT · FORESIGHTS BRAIN</text>
 <text x="1530" y="532" class="s d" text-anchor="end">the engine under the poster · every item below is a shipped command or module</text>
 <rect x="70" y="568" width="466" height="266" class="bx-brain"/>
 <text x="90" y="606" class="h">ENGINES + STORAGE</text>
 <text x="90" y="630" class="s d">pglite · postgres + pgvector</text>
 <text x="90" y="662" class="xs">· PGLite: embedded Postgres in one file, no server</text>
 <text x="90" y="684" class="xs">· Postgres + pgvector for scale: Supabase or own</text>
-<text x="90" y="706" class="xs">· gbrain migrate --to supabase | pglite, both ways</text>
+<text x="90" y="706" class="xs">· brain migrate --to supabase | pglite, both ways</text>
 <text x="90" y="728" class="xs">· markdown is the source of truth, DB is the index</text>
-<text x="90" y="750" class="xs">· page versions kept · gbrain revert to any one</text>
+<text x="90" y="750" class="xs">· page versions kept · brain revert to any one</text>
 <text x="90" y="772" class="xs">· raw data store for exports, files, attachments</text>
 <text x="90" y="794" class="xs">· S3, Supabase Storage or local disk for files</text>
 <rect x="566" y="568" width="466" height="266" class="bx-brain"/>
@@ -106,33 +106,33 @@
 <text x="586" y="684" class="xs">· intent classifier: entity, time, event, general</text>
 <text x="586" y="706" class="xs">· multi-query expansion, backlink boost, dedup</text>
 <text x="586" y="728" class="xs">· keyword-only mode needs no API key at all</text>
-<text x="586" y="750" class="xs">· gbrain eval: precision, recall, MRR, nDCG on</text>
+<text x="586" y="750" class="xs">· brain eval: precision, recall, MRR, nDCG on</text>
 <text x="586" y="772" class="xs">  your own 20 questions, A/B two configs</text>
-<text x="586" y="794" class="xs">· published benchmark: recall@5 83% to 95%</text>
+<text x="586" y="794" class="xs">· benchmarked: recall@5 83% to 95% with the graph</text>
 <rect x="1062" y="568" width="466" height="266" class="bx-brain"/>
 <text x="1082" y="606" class="h">KNOWLEDGE GRAPH</text>
 <text x="1082" y="630" class="s d">typed links · timeline · zero LLM</text>
 <text x="1082" y="662" class="xs">· every page save extracts links: works_at,</text>
 <text x="1082" y="684" class="xs">  advises, attended, source, mentions, founded</text>
 <text x="1082" y="706" class="xs">· dated timeline entries per company and person</text>
-<text x="1082" y="728" class="xs">· gbrain graph-query &lt;slug&gt; --depth 2 --type T</text>
-<text x="1082" y="750" class="xs">· gbrain orphans: pages nobody links to</text>
+<text x="1082" y="728" class="xs">· brain graph-query &lt;slug&gt; --depth 2 --type T</text>
+<text x="1082" y="750" class="xs">· brain orphans: pages nobody links to</text>
 <text x="1082" y="772" class="xs">· backlink checker and fixer, dead-link audit</text>
-<text x="1082" y="794" class="xs">· gbrain extract links|timeline over fs or db</text>
+<text x="1082" y="794" class="xs">· brain extract links|timeline over fs or db</text>
 <rect x="70" y="856" width="466" height="266" class="bx-agent"/>
-<text x="90" y="894" class="h">AGENT SURFACE</text>
-<text x="90" y="918" class="s d">one contract · cli + mcp · 26 skills</text>
+<text x="90" y="894" class="h">CLAUDE + CA SKILLS</text>
+<text x="90" y="918" class="s d">one contract · cli + mcp · ca skill pack</text>
 <text x="90" y="950" class="xs">· 41 operations defined once, CLI and MCP</text>
 <text x="90" y="972" class="xs">  server both generated from that contract</text>
-<text x="90" y="994" class="xs">· MCP over stdio for Claude Code, Cursor, any</text>
-<text x="90" y="1016" class="xs">  client · remote MCP with bearer tokens</text>
-<text x="90" y="1038" class="xs">· 26 skills: brain-ops, query, enrich, meeting-</text>
-<text x="90" y="1060" class="xs">  ingestion, citation-fixer, maintain, reports,</text>
-<text x="90" y="1082" class="xs">  cron-scheduler, data-research, soul-audit</text>
+<text x="90" y="994" class="xs">· Claude connects over MCP, local or remote</text>
+<text x="90" y="1016" class="xs">  with bearer tokens · no other UI needed</text>
+<text x="90" y="1038" class="xs">· CA skill pack: client-onboard, return-cycle,</text>
+<text x="90" y="1060" class="xs">  notice-reply, audit-file, template-fill,</text>
+<text x="90" y="1082" class="xs">  monday-memo, position-check, fee-review</text>
 <rect x="566" y="856" width="466" height="266" class="bx-in"/>
 <text x="586" y="894" class="h">INGESTION</text>
 <text x="586" y="918" class="s d">files · folders · audio · recipes</text>
-<text x="586" y="950" class="xs">· gbrain import &lt;dir&gt; with resume and workers</text>
+<text x="586" y="950" class="xs">· brain import &lt;dir&gt; with resume and workers</text>
 <text x="586" y="972" class="xs">· live sync: a watched folder stays indexed</text>
 <text x="586" y="994" class="xs">· 3-tier chunking: recursive, semantic, LLM-guided</text>
 <text x="586" y="1016" class="xs">· audio transcription: Groq Whisper or OpenAI</text>
@@ -142,387 +142,413 @@
 <rect x="1062" y="856" width="466" height="266" class="bx-agent"/>
 <text x="1082" y="894" class="h">OPERATIONS</text>
 <text x="1082" y="918" class="s d">runs itself · checks itself</text>
-<text x="1082" y="950" class="xs">· gbrain autopilot --install: sync, extract, embed</text>
+<text x="1082" y="950" class="xs">· brain autopilot --install: sync, extract, embed</text>
 <text x="1082" y="972" class="xs">· Minions job queue: retries, backoff, timeouts,</text>
 <text x="1082" y="994" class="xs">  parent-child fan-out, stall rescue, idempotency</text>
-<text x="1082" y="1016" class="xs">· gbrain doctor --fix: health checks, auto-repair</text>
+<text x="1082" y="1016" class="xs">· brain doctor --fix: health checks, auto-repair</text>
 <text x="1082" y="1038" class="xs">· brain score 0-100: embeds, links, time, orphans</text>
-<text x="1082" y="1060" class="xs">· gbrain upgrade with migrations + a repair trail</text>
+<text x="1082" y="1060" class="xs">· brain upgrade with migrations + a repair trail</text>
 <text x="1082" y="1082" class="xs">· lint, publish --password (encrypted HTML page)</text>
 <rect x="70" y="1138" width="1460" height="84" class="ex"/>
-<text x="92" y="1168" class="s">gbrain init  ·  gbrain import ./brain  ·  gbrain query &quot;open notices this quarter&quot;  ·  gbrain graph-query widget-traders --depth 2</text>
-<text x="92" y="1198" class="s">gbrain autopilot --install  ·  gbrain jobs submit  ·  gbrain doctor --fix  ·  gbrain eval  ·  gbrain serve  (MCP for the agent)</text>
-<text x="70" y="1296" class="sec">03 / WHAT THE BRAIN HOLDS</text>
-<text x="1530" y="1296" class="s d" text-anchor="end">five domains · one primary home per fact · the folder decides the page type</text>
-<rect x="70" y="1332" width="272" height="276" class="bx-brain"/>
-<text x="88" y="1372" class="h brain">CLIENTS</text>
-<text x="88" y="1398" class="s d">companies/ · people/</text>
-<line x1="88" y1="1416" x2="324" y2="1416" class="rule"/>
-<text x="88" y="1444" class="xs">· entity master: PAN, GSTIN,</text>
-<text x="88" y="1468" class="xs">  FY, registrations</text>
-<text x="88" y="1492" class="xs">· services engaged + fees</text>
-<text x="88" y="1516" class="xs">· contacts and their roles</text>
-<text x="88" y="1540" class="xs">· risk tier, history, notes</text>
-<text x="88" y="1564" class="xs">· every notice, filing, call</text>
-<rect x="367" y="1332" width="272" height="276" class="bx-agent"/>
-<text x="385" y="1372" class="h agent">WORK</text>
-<text x="385" y="1398" class="s d">projects/ · tasks/</text>
-<line x1="385" y1="1416" x2="621" y2="1416" class="rule"/>
-<text x="385" y="1444" class="xs">· one page per engagement</text>
-<text x="385" y="1468" class="xs">· recurring compliance jobs</text>
-<text x="385" y="1492" class="xs">· tasks: owner, due, status</text>
-<text x="385" y="1516" class="xs">· checklists ticked per job</text>
-<text x="385" y="1540" class="xs">· review gates and sign-off</text>
-<text x="385" y="1564" class="xs">· billing note when done</text>
-<rect x="664" y="1332" width="272" height="276" class="bx-brain"/>
-<text x="682" y="1372" class="h brain">KNOWLEDGE</text>
-<text x="682" y="1398" class="s d">concepts/</text>
-<line x1="682" y1="1416" x2="918" y2="1416" class="rule"/>
-<text x="682" y="1444" class="xs">· acts, rules, circulars</text>
-<text x="682" y="1468" class="xs">· the firm&#x27;s own positions</text>
-<text x="682" y="1492" class="xs">· SOPs: how we do each job</text>
-<text x="682" y="1516" class="xs">· checklists per service</text>
-<text x="682" y="1540" class="xs">· past rulings relied on</text>
-<text x="682" y="1564" class="xs">· lessons from corrections</text>
-<rect x="961" y="1332" width="272" height="276" class="bx-brain"/>
-<text x="979" y="1372" class="h brain">TEMPLATES</text>
-<text x="979" y="1398" class="s d">templates/</text>
-<line x1="979" y1="1416" x2="1215" y2="1416" class="rule"/>
-<text x="979" y="1444" class="xs">· engagement letters</text>
-<text x="979" y="1468" class="xs">· reply and representation</text>
-<text x="979" y="1492" class="xs">  formats, audit reports</text>
-<text x="979" y="1516" class="xs">· onboarding kits, MIS packs</text>
-<text x="979" y="1540" class="xs">· one page per template:</text>
-<text x="979" y="1564" class="xs">  version, use, owner</text>
-<rect x="1258" y="1332" width="272" height="276" class="bx-gate"/>
-<text x="1276" y="1372" class="h gate">STRATEGY</text>
-<text x="1276" y="1398" class="s d">strategy/ (partner only)</text>
-<line x1="1276" y1="1416" x2="1512" y2="1416" class="rule"/>
-<text x="1276" y="1444" class="xs">· firm goals, service mix</text>
-<text x="1276" y="1468" class="xs">· pricing + fee realisation</text>
-<text x="1276" y="1492" class="xs">· client profitability</text>
-<text x="1276" y="1516" class="xs">· staffing and capacity</text>
-<text x="1276" y="1540" class="xs">· growth and referral plan</text>
-<text x="1276" y="1564" class="xs">· decisions and why</text>
-<text x="70" y="1642" class="s d">also: meetings/ one page per call · finance/ rates and due-date calendars · sources/ raw files, never edited · inbox/ unplaced items</text>
-<text x="70" y="1670" class="xs d">companies, people, projects, concepts, meetings, finance and sources auto-link out of the box</text>
-<text x="70" y="1692" class="xs d">tasks/, templates/ and strategy/ are the firm&#x27;s own folders · one pattern line makes them link the same way</text>
-<text x="70" y="1766" class="sec">04 / THE CLIENT MASTER · ONE PAGE PER CLIENT</text>
-<text x="1530" y="1766" class="s d" text-anchor="end">top = true now · bottom = history</text>
-<rect x="70" y="1802" width="720" height="426" class="bx-brain"/>
-<text x="94" y="1842" class="s b">companies/widget-traders.md</text>
-<text x="94" y="1876" class="s d">type: company · pan: XXXXX0000X · gstin: 27XXXXX0000X1Z5</text>
-<text x="94" y="1902" class="s d">fy: apr-mar · regd: gst, tds, msme · books: tally prime</text>
-<text x="94" y="1928" class="s">services: gstr-1/3b monthly · tds quarterly · itr · audit</text>
-<text x="94" y="1954" class="s">fees: 18,000/month retainer + audit 60,000 · billed quarterly</text>
-<text x="94" y="1980" class="s">contacts: [owner](people/r-shah) · [accounts](people/p-iyer)</text>
-<text x="94" y="2006" class="s">risk: medium · late documents in q4 · pays within 30 days</text>
-<text x="94" y="2032" class="s">position: ITC claimed on 2B basis since FY24</text>
-<text x="94" y="2058" class="s">open: ASMT-10 reply due 14 nov · audit FY25-26 fieldwork</text>
-<text x="94" y="2084" class="s">docs: engagement letter v3 (2026) · dsc with firm till mar</text>
-<text x="94" y="2110" class="s d">&lt;!-- timeline --&gt;</text>
-<text x="94" y="2136" class="s">2026-10-28  ASMT-10 received · sources/notice-2026-10-28</text>
-<text x="94" y="2162" class="s">2026-10-20  GSTR-3B sep filed · ARN saved · invoice raised</text>
-<line x1="94" y1="2182" x2="766" y2="2182" class="rule"/>
-<text x="94" y="2208" class="xs d">numbers come from your billing and books exports · the brain links them</text>
-<rect x="830" y="1802" width="700" height="426" class="bx-brain"/>
-<text x="854" y="1842" class="lab">WHAT HANGS OFF THE CLIENT PAGE</text>
-<text x="854" y="1878" class="s">people/r-shah · people/p-iyer        who we talk to, about what</text>
-<text x="854" y="1905" class="s">projects/wt-gstr3b-2026-10           this month&#x27;s return job</text>
-<text x="854" y="1932" class="s">projects/wt-audit-fy25-26            the audit engagement</text>
-<text x="854" y="1959" class="s">projects/wt-asmt10-reply             the notice reply</text>
-<text x="854" y="1986" class="s">templates/engagement-letter          v3 · signed 2026-04</text>
-<text x="854" y="2013" class="s">concepts/positions/itc-2b-basis      the stand we take</text>
-<text x="854" y="2040" class="s">meetings/2026-10-30-widget-traders   last call, decisions</text>
-<text x="854" y="2067" class="s">sources/notice-2026-10-28.pdf        the raw notice</text>
-<text x="854" y="2094" class="s">tasks/wt-*                           open items by owner</text>
-<line x1="854" y1="2182" x2="1506" y2="2182" class="rule"/>
-<text x="854" y="2208" class="xs d">every link above is a typed edge · ask the graph, not a folder search</text>
-<text x="70" y="2302" class="sec">05 / THE WORK ENGINE</text>
-<text x="1530" y="2302" class="s d" text-anchor="end">recurring compliance + one-off engagements + tasks · the morning list is built from this</text>
-<rect x="70" y="2338" width="720" height="420" class="bx-agent"/>
-<text x="94" y="2378" class="lab">THE COMPLIANCE CALENDAR · finance/calendar.md</text>
-<text x="94" y="2414" class="s b">GSTR-1</text>
-<text x="284" y="2414" class="s">11th monthly</text>
-<text x="564" y="2414" class="s d">every GST client</text>
-<text x="94" y="2441" class="s b">GSTR-3B</text>
-<text x="284" y="2441" class="s">20th monthly</text>
-<text x="564" y="2441" class="s d">every GST client</text>
-<text x="94" y="2468" class="s b">TDS deposit</text>
-<text x="284" y="2468" class="s">7th monthly</text>
-<text x="564" y="2468" class="s d">deductors</text>
-<text x="94" y="2495" class="s b">TDS return</text>
-<text x="284" y="2495" class="s">31 jul · oct · jan · may</text>
-<text x="564" y="2495" class="s d">deductors</text>
-<text x="94" y="2522" class="s b">advance tax</text>
-<text x="284" y="2522" class="s">15 jun · sep · dec · mar</text>
-<text x="564" y="2522" class="s d">taxpayers above limit</text>
-<text x="94" y="2549" class="s b">tax audit</text>
-<text x="284" y="2549" class="s">30 sep</text>
-<text x="564" y="2549" class="s d">audit cases</text>
-<text x="94" y="2576" class="s b">ITR</text>
-<text x="284" y="2576" class="s">31 jul · 31 oct (audit)</text>
-<text x="564" y="2576" class="s d">all</text>
-<text x="94" y="2603" class="s b">GSTR-9 / 9C</text>
-<text x="284" y="2603" class="s">31 dec</text>
-<text x="564" y="2603" class="s d">turnover above limit</text>
-<text x="94" y="2630" class="s b">AOC-4 · MGT-7</text>
-<text x="284" y="2630" class="s">30 · 60 days from AGM</text>
-<text x="564" y="2630" class="s d">companies</text>
-<line x1="94" y1="2674" x2="766" y2="2674" class="rule"/>
-<text x="94" y="2700" class="xs d">dates live on one page you edit when the law changes · the brain</text>
-<text x="94" y="2722" class="xs d">spawns one job per client per cycle and puts it on the timeline</text>
-<rect x="830" y="2338" width="700" height="420" class="bx-agent"/>
-<text x="854" y="2378" class="lab">ONE JOB · projects/wt-gstr3b-2026-10.md</text>
-<text x="854" y="2414" class="s d">client: widget-traders · service: GSTR-3B · period: sep 2026</text>
-<text x="854" y="2440" class="s">owner: article a · reviewer: manager m · due: 20 oct</text>
-<text x="854" y="2466" class="s">status: in review · started 12 oct · docs received 15 oct</text>
-<text x="854" y="2492" class="s">checklist: concepts/checklists/gstr3b (9 of 11 ticked)</text>
-<text x="854" y="2518" class="s">open: 2 purchase bills not in 2B · ask client</text>
-<text x="854" y="2544" class="s">template: templates/client-query-gst v2</text>
-<text x="854" y="2570" class="s">fee: in retainer · bill with quarter</text>
-<text x="854" y="2596" class="s d">&lt;!-- timeline --&gt;</text>
-<text x="854" y="2622" class="s">2026-10-15  books received · 2B pulled · match run</text>
-<text x="854" y="2648" class="s">2026-10-18  draft 3B ready · sent to reviewer ◆</text>
-<line x1="854" y1="2674" x2="1506" y2="2674" class="rule"/>
-<text x="854" y="2700" class="xs d">views the brain gives you: by client · by staff · by service line</text>
-<text x="854" y="2722" class="xs d">· by due date · what is late · what is waiting on the client</text>
-<text x="70" y="2832" class="sec">06 / KNOWLEDGE + TEMPLATE STRATEGY</text>
-<text x="1530" y="2832" class="s d" text-anchor="end">the firm&#x27;s way of working, written once, used by every job</text>
-<rect x="70" y="2868" width="720" height="330" class="bx-brain"/>
-<text x="94" y="2908" class="lab">KNOWLEDGE · concepts/</text>
-<text x="94" y="2944" class="s">law/         sections, rules, circulars · with source + date checked</text>
-<text x="94" y="2971" class="s">positions/   the stand we take, when, why · who approved it</text>
-<text x="94" y="2998" class="s">sops/        how we onboard, run an audit, reply to a notice</text>
-<text x="94" y="3025" class="s">checklists/  per service: GSTR-3B, TDS, ITR, audit, ROC</text>
-<text x="94" y="3052" class="s">lessons/     every correction a CA makes becomes a line here</text>
-<text x="94" y="3079" class="s"></text>
-<text x="94" y="3106" class="s">a page says &#x27;not covered&#x27; when the firm has no position yet</text>
-<text x="94" y="3133" class="s">stale check: anything older than its review date is flagged</text>
-<text x="94" y="3176" class="xs d">the agent reads these before drafting · the draft cites the page it used</text>
-<rect x="830" y="2868" width="700" height="330" class="bx-brain"/>
-<text x="854" y="2908" class="lab">TEMPLATES · templates/ · one page per template</text>
-<text x="854" y="2944" class="s">engagement-letter      v3 · use: new client · owner: partner</text>
-<text x="854" y="2971" class="s">client-query-gst       v2 · use: 2B mismatch · owner: manager</text>
-<text x="854" y="2998" class="s">asmt-10-reply          v4 · use: 3B vs 2B notice · reviewed sep</text>
-<text x="854" y="3025" class="s">audit-report-pvt       v6 · use: pvt ltd audit · reviewed apr</text>
-<text x="854" y="3052" class="s">representation-letter  v2 · use: every audit · owner: partner</text>
-<text x="854" y="3079" class="s">monthly-mis            v1 · use: retainer clients · owner: m</text>
-<text x="854" y="3106" class="s"></text>
-<text x="854" y="3133" class="s">the agent fills a template from the client page, never by hand</text>
-<text x="854" y="3176" class="xs d">a change a CA makes twice becomes the next version · usage logs on the client</text>
-<text x="70" y="3272" class="sec">07 / STRATEGY · THE PARTNER VIEW</text>
-<text x="1530" y="3272" class="s d" text-anchor="end">the private layer · reads everything, is read by no one else</text>
-<rect x="70" y="3308" width="720" height="290" class="bx-gate"/>
-<text x="94" y="3348" class="lab gate">STRATEGY PAGES · strategy/</text>
-<text x="94" y="3384" class="s">goals-2026        revenue, service mix, clients to add or drop</text>
-<text x="94" y="3411" class="s">pricing           retainer bands, hourly floor, scope rules</text>
-<text x="94" y="3438" class="s">profitability     fees vs hours per client · from your billing export</text>
-<text x="94" y="3465" class="s">capacity          who is loaded when · season plan · hiring</text>
-<text x="94" y="3492" class="s">client-tiers      A/B/C by fee, risk, payment habit</text>
-<text x="94" y="3519" class="s">decisions         what we decided, when, why · never deleted</text>
-<text x="94" y="3546" class="s">referrals         who sends work, who we send to</text>
-<text x="94" y="3580" class="xs d">numbers are imported, not invented · every figure keeps its source file</text>
-<rect x="830" y="3308" width="700" height="290" class="bx-gate"/>
-<text x="854" y="3348" class="lab gate">QUESTIONS THE PARTNER ASKS THE BRAIN</text>
-<text x="854" y="3384" class="s">· which clients take the most hours for the least fee?</text>
-<text x="854" y="3411" class="s">· who is overloaded in the september audit season?</text>
-<text x="854" y="3438" class="s">· which service line grew this year, which shrank?</text>
-<text x="854" y="3465" class="s">· which clients have an open notice or a late payment?</text>
-<text x="854" y="3492" class="s">· what did we decide about scope creep in march, and why?</text>
-<text x="854" y="3519" class="s">· which templates have not been reviewed in a year?</text>
-<text x="854" y="3546" class="s">· which positions do we take that a new circular affects?</text>
-<text x="854" y="3580" class="xs d">answers cite pages · the brain says &#x27;not in the brain&#x27; instead of guessing</text>
-<text x="70" y="3672" class="sec">08 / HOW ANY PIECE OF WORK MOVES</text>
-<text x="1530" y="3672" class="s d" text-anchor="end">a return, a notice, a new client, an advisory ask · same eight steps</text>
-<rect x="70" y="3708" width="335" height="150" class="bx-in"/>
-<text x="90" y="3750" class="h">1  WORK ARRIVES</text>
-<text x="90" y="3788" class="s">return due · notice · ask</text>
-<text x="90" y="3815" class="s">new client · partner idea</text>
-<path d="M408,3783 H440" class="ln" marker-end="url(#ah)"/>
-<rect x="445" y="3708" width="335" height="150" class="bx-brain"/>
-<text x="465" y="3750" class="h">2  FILED</text>
-<text x="465" y="3788" class="s">under client + engagement</text>
-<text x="465" y="3815" class="s">owner, due date, status</text>
-<path d="M783,3783 H815" class="ln" marker-end="url(#ah)"/>
-<rect x="820" y="3708" width="335" height="150" class="bx-brain"/>
-<text x="840" y="3750" class="h">3  CONTEXT FOUND</text>
-<text x="840" y="3788" class="s">client history + position</text>
-<text x="840" y="3815" class="s">law, SOP, past lessons</text>
-<path d="M1158,3783 H1190" class="ln" marker-end="url(#ah)"/>
-<rect x="1195" y="3708" width="335" height="150" class="bx-brain"/>
-<text x="1215" y="3750" class="h">4  TEMPLATE PULLED</text>
-<text x="1215" y="3788" class="s">the right version</text>
-<text x="1215" y="3815" class="s">filled from the client page</text>
-<rect x="70" y="3938" width="335" height="150" class="bx-agent"/>
-<text x="90" y="3980" class="h">5  WORK PREPARED</text>
-<text x="90" y="4018" class="s">draft, working, checklist</text>
-<text x="90" y="4045" class="s">every number shows source</text>
-<path d="M408,4013 H440" class="ln" marker-end="url(#ah)"/>
-<rect x="445" y="3938" width="335" height="150" class="bx-gate"/>
-<text x="465" y="3980" class="h gate">◆ 6 · A CA REVIEWS</text>
-<text x="465" y="4018" class="s">yes · change it · no</text>
-<text x="465" y="4045" class="s">never files on its own</text>
-<path d="M783,4013 H815" class="ln" marker-end="url(#ah)"/>
-<rect x="820" y="3938" width="335" height="150" class="bx-ok"/>
-<text x="840" y="3980" class="h ok">⚓ 7  DONE + LOGGED</text>
-<text x="840" y="4018" class="s">sent or filed by a person</text>
-<text x="840" y="4045" class="s">timeline + billing note</text>
-<path d="M1158,4013 H1190" class="ln" marker-end="url(#ah)"/>
-<rect x="1195" y="3938" width="335" height="150" class="bx-brain"/>
-<text x="1215" y="3980" class="h">↺ 8  REMEMBERED</text>
-<text x="1215" y="4018" class="s">lesson, template version,</text>
-<text x="1215" y="4045" class="s">position, client note</text>
-<path d="M1362,3863 V3898 H237 V3932" class="ln" marker-end="url(#ah)"/>
-<text x="70" y="4162" class="sec">09 / WHO SEES WHAT · WHERE IT RUNS</text>
-<text x="1530" y="4162" class="s d" text-anchor="end">one brain per partner or practice group · separation is physical</text>
-<rect x="70" y="4198" width="900" height="348" class="bx"/>
-<rect x="70" y="4198" width="900" height="58" class="thead"/>
-<text x="86" y="4234" class="lab"></text>
-<text x="246" y="4234" class="lab">strategy</text>
-<text x="426" y="4234" class="lab">clients + work</text>
-<text x="646" y="4234" class="lab">knowledge</text>
-<text x="836" y="4234" class="lab">other groups</text>
-<text x="86" y="4292" class="s b">partner</text>
-<text x="246" y="4292" class="s">✓ read + change</text>
-<text x="426" y="4292" class="s">✓ read · approves</text>
-<text x="646" y="4292" class="s">✓ read + change</text>
-<text x="836" y="4292" class="s">✕</text>
-<line x1="70" y1="4256" x2="970" y2="4256" class="rule"/>
-<text x="86" y="4350" class="s b">manager</text>
-<text x="246" y="4350" class="s">✕</text>
-<text x="426" y="4350" class="s">✓ read · suggests</text>
-<text x="646" y="4350" class="s">✓ read · suggests</text>
-<text x="836" y="4350" class="s">✕</text>
-<line x1="70" y1="4314" x2="970" y2="4314" class="rule"/>
-<text x="86" y="4408" class="s b">article</text>
-<text x="246" y="4408" class="s">✕</text>
-<text x="426" y="4408" class="s">✓ read · drafts</text>
-<text x="646" y="4408" class="s">✓ read</text>
-<text x="836" y="4408" class="s">✕</text>
-<line x1="70" y1="4372" x2="970" y2="4372" class="rule"/>
-<text x="86" y="4466" class="s b">client</text>
-<text x="246" y="4466" class="s">✕</text>
-<text x="426" y="4466" class="s">what a CA sends</text>
-<text x="646" y="4466" class="s">✕</text>
-<text x="836" y="4466" class="s">✕</text>
-<line x1="70" y1="4430" x2="970" y2="4430" class="rule"/>
-<text x="86" y="4524" class="s b">outsider</text>
-<text x="246" y="4524" class="s">✕</text>
-<text x="426" y="4524" class="s">✕</text>
-<text x="646" y="4524" class="s">✕</text>
-<text x="836" y="4524" class="s">✕</text>
-<line x1="70" y1="4488" x2="970" y2="4488" class="rule"/>
-<rect x="1010" y="4198" width="520" height="348" class="bx"/>
-<text x="1032" y="4232" class="lab">WHERE IT RUNS</text>
-<text x="1032" y="4262" class="xs d">start</text>
-<text x="1102" y="4262" class="s">one file on a firm machine · no server</text>
-<text x="1032" y="4289" class="xs d">grow</text>
-<text x="1102" y="4289" class="s">postgres + pgvector on your own box or a</text>
-<text x="1102" y="4316" class="s">managed DB in India · 1000+ files</text>
-<text x="1032" y="4343" class="xs d">access</text>
-<text x="1102" y="4343" class="s">no per-user locks inside one brain today,</text>
-<text x="1102" y="4370" class="s">so one brain per partner, no shared keys,</text>
-<text x="1102" y="4397" class="s">staff go through the agent, not a key</text>
-<text x="1032" y="4424" class="xs d">data</text>
-<text x="1102" y="4424" class="s">pages and the DB stay on the firm&#x27;s server</text>
-<text x="1032" y="4451" class="xs d">leaves</text>
-<text x="1102" y="4451" class="s">chunk text to the embedding API (OpenAI),</text>
-<text x="1102" y="4478" class="s">queries to a small model for expansion ·</text>
-<text x="1102" y="4505" class="s">turn both off: keyword + graph, none out</text>
-<text x="70" y="4620" class="sec">10 / THE RHYTHM</text>
-<text x="1530" y="4620" class="s d" text-anchor="end">scheduled jobs the brain runs for the firm</text>
-<rect x="70" y="4656" width="1460" height="312" class="bx"/>
-<text x="92" y="4689" class="lab">EVERY MORNING</text>
-<text x="330" y="4689" class="s">a due list per person: returns, replies, hearings, client docs awaited · what is late</text>
-<line x1="70" y1="4708" x2="1530" y2="4708" class="rule"/>
-<text x="92" y="4741" class="lab">ALL DAY</text>
-<text x="330" y="4741" class="s">drafts and workings wait in one approval list: yes, change it or no</text>
-<line x1="70" y1="4760" x2="1530" y2="4760" class="rule"/>
-<text x="92" y="4793" class="lab">EVERY NIGHT</text>
-<text x="330" y="4793" class="s">sync new files, extract links, embed, spawn next cycle&#x27;s jobs, flag stale positions</text>
-<line x1="70" y1="4812" x2="1530" y2="4812" class="rule"/>
-<text x="92" y="4845" class="lab">EVERY MONDAY</text>
-<text x="330" y="4845" class="s">one memo per partner: filings done, notices open, hours vs fees, fees to bill</text>
-<line x1="70" y1="4864" x2="1530" y2="4864" class="rule"/>
-<text x="92" y="4897" class="lab">EVERY MONTH</text>
-<text x="330" y="4897" class="s">client profitability, template review list, health check: dead links, orphans, coverage</text>
-<line x1="70" y1="4916" x2="1530" y2="4916" class="rule"/>
-<text x="92" y="4949" class="lab">EVERY QUARTER</text>
-<text x="330" y="4949" class="s">strategy review from the pages: goals vs actuals, capacity for next season, tiers</text>
-<text x="70" y="5042" class="sec">11 / ROLLOUT IN FIVE STEPS</text>
-<text x="1530" y="5042" class="s d" text-anchor="end">one partner first · prove retrieval before adding clients</text>
-<rect x="70" y="5078" width="268" height="150" class="bx-agent"/>
-<text x="88" y="5118" class="h">1 PILOT</text>
-<text x="88" y="5154" class="s">one partner&#x27;s clients</text>
-<text x="88" y="5179" class="s">local brain, the folders</text>
-<text x="88" y="5204" class="s">above, no server yet</text>
-<path d="M341,5153 H363" class="ln" marker-end="url(#ah)"/>
-<rect x="368" y="5078" width="268" height="150" class="bx"/>
-<text x="386" y="5118" class="h">2 SEED</text>
-<text x="386" y="5154" class="s">client master from the</text>
-<text x="386" y="5179" class="s">tally, zoho and billing</text>
-<text x="386" y="5204" class="s">exports · one page each</text>
-<path d="M639,5153 H661" class="ln" marker-end="url(#ah)"/>
-<rect x="666" y="5078" width="268" height="150" class="bx"/>
-<text x="684" y="5118" class="h">3 LOAD</text>
-<text x="684" y="5154" class="s">calendar, checklists,</text>
-<text x="684" y="5179" class="s">templates, positions and</text>
-<text x="684" y="5204" class="s">two years of history</text>
-<path d="M937,5153 H959" class="ln" marker-end="url(#ah)"/>
-<rect x="964" y="5078" width="268" height="150" class="bx"/>
-<text x="982" y="5118" class="h">4 MEASURE</text>
-<text x="982" y="5154" class="s">20 real questions from</text>
-<text x="982" y="5179" class="s">the partner, scored on</text>
-<text x="982" y="5204" class="s">recall · fix schema 1st</text>
-<path d="M1235,5153 H1257" class="ln" marker-end="url(#ah)"/>
-<rect x="1262" y="5078" width="268" height="150" class="bx-agent"/>
-<text x="1280" y="5118" class="h">5 EXPAND</text>
-<text x="1280" y="5154" class="s">night jobs, email intake</text>
-<text x="1280" y="5179" class="s">next partner · postgres</text>
-<text x="1280" y="5204" class="s">when the brain outgrows</text>
-<text x="70" y="5302" class="sec">12 / NOT IN THE BOX · NON-NEGOTIABLES</text>
-<rect x="70" y="5338" width="710" height="258" class="bx"/>
-<text x="92" y="5374" class="lab">NOT IN THE BOX · BUILD IT OR KEEP YOUR TOOL</text>
-<text x="92" y="5408" class="s">· no tally, GST-portal or income-tax-portal connector:</text>
-<text x="92" y="5434" class="s">  small collectors drop exports into sources/ on a schedule</text>
-<text x="92" y="5460" class="s">· not a billing, time-sheet or document system: those stay,</text>
-<text x="92" y="5486" class="s">  the brain imports their exports and links the facts</text>
-<text x="92" y="5512" class="s">· no per-user access rules inside one brain: split brains</text>
-<text x="92" y="5538" class="s">· no local embedding model yet: semantic search uses the</text>
-<text x="92" y="5564" class="s">  OpenAI embedding API · keyword + graph mode needs nothing</text>
-<rect x="820" y="5338" width="710" height="258" class="bx-never"/>
-<text x="842" y="5374" class="lab never">THE BRAIN NEVER</text>
-<text x="842" y="5408" class="s">✕ files a return or sends a reply without a CA&#x27;s yes</text>
-<text x="842" y="5434" class="s">✕ invents a number, a section, a date or a fee</text>
-<text x="842" y="5460" class="s">✕ shows a figure without the source it came from</text>
-<text x="842" y="5486" class="s">✕ shares a login: one person, one key</text>
-<text x="842" y="5512" class="s">✕ lets client data leave the firm&#x27;s server</text>
-<text x="842" y="5538" class="s">✕ keeps passwords, OTPs or DSC PINs in any page</text>
-<text x="842" y="5564" class="s">✕ answers from outside the brain without saying so</text>
-<text x="70" y="5670" class="sec">EXAMPLE · ONE MONTH FOR ONE CLIENT, START TO FINISH</text>
-<text x="70" y="5714">1  1 oct: the night job spawns widget traders&#x27; GSTR-3B job for september, owner article a, due 20 oct</text>
-<text x="70" y="5748">2  the morning list shows it · on 15 oct books arrive, the brain pulls 2B, runs the match, two bills are missing</text>
-<text x="70" y="5782">3  the agent fills client-query-gst v2 from the client page · the manager says yes · the client replies in a day</text>
-<text x="70" y="5816">4  the draft 3B and workings go to the manager ◆ · she changes one head · the partner files it from the firm login</text>
-<text x="70" y="5850">5  ARN, date and &#x27;bill with quarter&#x27; land on the client timeline · the correction becomes a lesson line</text>
-<text x="70" y="5884">6  28 oct: an ASMT-10 arrives · filed under the client, template v4 pulled, last year&#x27;s position found, reply due 14 nov</text>
-<text x="70" y="5918">7  monday memo: 1 return filed, 1 notice open, 11 hours on a retainer client this month, fee realisation flagged</text>
-<line x1="70" y1="5976" x2="1530" y2="5976" class="rule-fg"/>
-<rect x="70" y="6008" width="36" height="24" class="bx-in"/>
-<text x="118" y="6028" class="s d">what comes in</text>
-<rect x="286" y="6008" width="36" height="24" class="bx-brain"/>
-<text x="334" y="6028" class="s d">the brain</text>
-<rect x="464" y="6008" width="36" height="24" class="bx-agent"/>
-<text x="512" y="6028" class="s d">the agent · work</text>
-<rect x="709" y="6008" width="36" height="24" class="bx-gate"/>
-<text x="757" y="6028" class="s d">◆ partner only · a CA must say yes</text>
-<rect x="1127" y="6008" width="36" height="24" class="bx-ok"/>
-<text x="1175" y="6028" class="s d">⚓ a result</text>
-<rect x="1315" y="6008" width="36" height="24" class="bx-never"/>
-<text x="1363" y="6028" class="s d">✕ never</text>
-<text x="70" y="6072" class="s d">↺ repeats · pages are markdown you can read without gbrain · the brain is memory, the CA is judgment</text>
-<text x="1530" y="6102" class="s d" text-anchor="end">built on gbrain · github.com/garrytan/gbrain · MIT</text>
+<text x="92" y="1168" class="s">brain init  ·  brain import ./clients  ·  brain query &quot;open notices this quarter&quot;  ·  brain graph-query widget-traders --depth 2</text>
+<text x="92" y="1198" class="s">brain autopilot --install  ·  brain jobs submit  ·  brain doctor --fix  ·  brain eval  ·  brain serve  (MCP for Claude)</text>
+<text x="70" y="1272" class="lab">BUILT FOR CA FIRMS · WHAT CLAUDE LOADS BEFORE EVERY JOB</text>
+<rect x="70" y="1292" width="228" height="100" class="bx-agent"/>
+<text x="84" y="1326" class="lab">CA FOLDER SCHEMA</text>
+<text x="84" y="1354" class="xs">clients, work, law,</text>
+<text x="84" y="1374" class="xs">templates, strategy</text>
+<rect x="316" y="1292" width="228" height="100" class="bx-agent"/>
+<text x="330" y="1326" class="lab">COMPLIANCE CALENDAR</text>
+<text x="330" y="1354" class="xs">GST, TDS, ITR, audit,</text>
+<text x="330" y="1374" class="xs">ROC due dates</text>
+<rect x="562" y="1292" width="228" height="100" class="bx-agent"/>
+<text x="576" y="1326" class="lab">SERVICE CHECKLISTS</text>
+<text x="576" y="1354" class="xs">one per job type,</text>
+<text x="576" y="1374" class="xs">ticked per job</text>
+<rect x="808" y="1292" width="228" height="100" class="bx-agent"/>
+<text x="822" y="1326" class="lab">FIRM POSITIONS</text>
+<text x="822" y="1354" class="xs">the stands the firm</text>
+<text x="822" y="1374" class="xs">takes, and why</text>
+<rect x="1054" y="1292" width="228" height="100" class="bx-agent"/>
+<text x="1068" y="1326" class="lab">TEMPLATE PACK</text>
+<text x="1068" y="1354" class="xs">letters, replies, MIS,</text>
+<text x="1068" y="1374" class="xs">reports · versioned</text>
+<rect x="1300" y="1292" width="228" height="100" class="bx-agent"/>
+<text x="1314" y="1326" class="lab">NEVER-RULES</text>
+<text x="1314" y="1354" class="xs">no filing, no sending,</text>
+<text x="1314" y="1374" class="xs">no guessing</text>
+<text x="70" y="1426" class="xs d">same engine, loaded with the firm&#x27;s way of working · Claude never starts a job without reading these</text>
+<text x="70" y="1500" class="sec">03 / WHAT THE BRAIN HOLDS</text>
+<text x="1530" y="1500" class="s d" text-anchor="end">five domains · one primary home per fact · the folder decides the page type</text>
+<rect x="70" y="1536" width="272" height="276" class="bx-brain"/>
+<text x="88" y="1576" class="h brain">CLIENTS</text>
+<text x="88" y="1602" class="s d">companies/ · people/</text>
+<line x1="88" y1="1620" x2="324" y2="1620" class="rule"/>
+<text x="88" y="1648" class="xs">· entity master: PAN, GSTIN,</text>
+<text x="88" y="1672" class="xs">  FY, registrations</text>
+<text x="88" y="1696" class="xs">· services engaged + fees</text>
+<text x="88" y="1720" class="xs">· contacts and their roles</text>
+<text x="88" y="1744" class="xs">· risk tier, history, notes</text>
+<text x="88" y="1768" class="xs">· every notice, filing, call</text>
+<rect x="367" y="1536" width="272" height="276" class="bx-agent"/>
+<text x="385" y="1576" class="h agent">WORK</text>
+<text x="385" y="1602" class="s d">projects/ · tasks/</text>
+<line x1="385" y1="1620" x2="621" y2="1620" class="rule"/>
+<text x="385" y="1648" class="xs">· one page per engagement</text>
+<text x="385" y="1672" class="xs">· recurring compliance jobs</text>
+<text x="385" y="1696" class="xs">· tasks: owner, due, status</text>
+<text x="385" y="1720" class="xs">· checklists ticked per job</text>
+<text x="385" y="1744" class="xs">· review gates and sign-off</text>
+<text x="385" y="1768" class="xs">· billing note when done</text>
+<rect x="664" y="1536" width="272" height="276" class="bx-brain"/>
+<text x="682" y="1576" class="h brain">KNOWLEDGE</text>
+<text x="682" y="1602" class="s d">concepts/</text>
+<line x1="682" y1="1620" x2="918" y2="1620" class="rule"/>
+<text x="682" y="1648" class="xs">· acts, rules, circulars</text>
+<text x="682" y="1672" class="xs">· the firm&#x27;s own positions</text>
+<text x="682" y="1696" class="xs">· SOPs: how we do each job</text>
+<text x="682" y="1720" class="xs">· checklists per service</text>
+<text x="682" y="1744" class="xs">· past rulings relied on</text>
+<text x="682" y="1768" class="xs">· lessons from corrections</text>
+<rect x="961" y="1536" width="272" height="276" class="bx-brain"/>
+<text x="979" y="1576" class="h brain">TEMPLATES</text>
+<text x="979" y="1602" class="s d">templates/</text>
+<line x1="979" y1="1620" x2="1215" y2="1620" class="rule"/>
+<text x="979" y="1648" class="xs">· engagement letters</text>
+<text x="979" y="1672" class="xs">· reply and representation</text>
+<text x="979" y="1696" class="xs">  formats, audit reports</text>
+<text x="979" y="1720" class="xs">· onboarding kits, MIS packs</text>
+<text x="979" y="1744" class="xs">· one page per template:</text>
+<text x="979" y="1768" class="xs">  version, use, owner</text>
+<rect x="1258" y="1536" width="272" height="276" class="bx-gate"/>
+<text x="1276" y="1576" class="h gate">STRATEGY</text>
+<text x="1276" y="1602" class="s d">strategy/ (partner only)</text>
+<line x1="1276" y1="1620" x2="1512" y2="1620" class="rule"/>
+<text x="1276" y="1648" class="xs">· firm goals, service mix</text>
+<text x="1276" y="1672" class="xs">· pricing + fee realisation</text>
+<text x="1276" y="1696" class="xs">· client profitability</text>
+<text x="1276" y="1720" class="xs">· staffing and capacity</text>
+<text x="1276" y="1744" class="xs">· growth and referral plan</text>
+<text x="1276" y="1768" class="xs">· decisions and why</text>
+<text x="70" y="1846" class="s d">also: meetings/ one page per call · finance/ rates and due-date calendars · sources/ raw files, never edited · inbox/ unplaced items</text>
+<text x="70" y="1874" class="xs d">companies, people, projects, concepts, meetings, finance and sources auto-link on every save</text>
+<text x="70" y="1896" class="xs d">tasks/, templates/ and strategy/ come with the CA setup and link the same way</text>
+<text x="70" y="1970" class="sec">04 / THE CLIENT MASTER · ONE PAGE PER CLIENT</text>
+<text x="1530" y="1970" class="s d" text-anchor="end">top = true now · bottom = history</text>
+<rect x="70" y="2006" width="720" height="426" class="bx-brain"/>
+<text x="94" y="2046" class="s b">companies/widget-traders.md</text>
+<text x="94" y="2080" class="s d">type: company · pan: XXXXX0000X · gstin: 27XXXXX0000X1Z5</text>
+<text x="94" y="2106" class="s d">fy: apr-mar · regd: gst, tds, msme · books: tally prime</text>
+<text x="94" y="2132" class="s">services: gstr-1/3b monthly · tds quarterly · itr · audit</text>
+<text x="94" y="2158" class="s">fees: 18,000/month retainer + audit 60,000 · billed quarterly</text>
+<text x="94" y="2184" class="s">contacts: [owner](people/r-shah) · [accounts](people/p-iyer)</text>
+<text x="94" y="2210" class="s">risk: medium · late documents in q4 · pays within 30 days</text>
+<text x="94" y="2236" class="s">position: ITC claimed on 2B basis since FY24</text>
+<text x="94" y="2262" class="s">open: ASMT-10 reply due 14 nov · audit FY25-26 fieldwork</text>
+<text x="94" y="2288" class="s">docs: engagement letter v3 (2026) · dsc with firm till mar</text>
+<text x="94" y="2314" class="s d">&lt;!-- timeline --&gt;</text>
+<text x="94" y="2340" class="s">2026-10-28  ASMT-10 received · sources/notice-2026-10-28</text>
+<text x="94" y="2366" class="s">2026-10-20  GSTR-3B sep filed · ARN saved · invoice raised</text>
+<line x1="94" y1="2386" x2="766" y2="2386" class="rule"/>
+<text x="94" y="2412" class="xs d">numbers come from your billing and books exports · the brain links them</text>
+<rect x="830" y="2006" width="700" height="426" class="bx-brain"/>
+<text x="854" y="2046" class="lab">WHAT HANGS OFF THE CLIENT PAGE</text>
+<text x="854" y="2082" class="s">people/r-shah · people/p-iyer        who we talk to, about what</text>
+<text x="854" y="2109" class="s">projects/wt-gstr3b-2026-10           this month&#x27;s return job</text>
+<text x="854" y="2136" class="s">projects/wt-audit-fy25-26            the audit engagement</text>
+<text x="854" y="2163" class="s">projects/wt-asmt10-reply             the notice reply</text>
+<text x="854" y="2190" class="s">templates/engagement-letter          v3 · signed 2026-04</text>
+<text x="854" y="2217" class="s">concepts/positions/itc-2b-basis      the stand we take</text>
+<text x="854" y="2244" class="s">meetings/2026-10-30-widget-traders   last call, decisions</text>
+<text x="854" y="2271" class="s">sources/notice-2026-10-28.pdf        the raw notice</text>
+<text x="854" y="2298" class="s">tasks/wt-*                           open items by owner</text>
+<line x1="854" y1="2386" x2="1506" y2="2386" class="rule"/>
+<text x="854" y="2412" class="xs d">every link above is a typed edge · ask the graph, not a folder search</text>
+<text x="70" y="2506" class="sec">05 / THE WORK ENGINE</text>
+<text x="1530" y="2506" class="s d" text-anchor="end">recurring compliance + one-off engagements + tasks · the morning list is built from this</text>
+<rect x="70" y="2542" width="720" height="420" class="bx-agent"/>
+<text x="94" y="2582" class="lab">THE COMPLIANCE CALENDAR · finance/calendar.md</text>
+<text x="94" y="2618" class="s b">GSTR-1</text>
+<text x="284" y="2618" class="s">11th monthly</text>
+<text x="564" y="2618" class="s d">every GST client</text>
+<text x="94" y="2645" class="s b">GSTR-3B</text>
+<text x="284" y="2645" class="s">20th monthly</text>
+<text x="564" y="2645" class="s d">every GST client</text>
+<text x="94" y="2672" class="s b">TDS deposit</text>
+<text x="284" y="2672" class="s">7th monthly</text>
+<text x="564" y="2672" class="s d">deductors</text>
+<text x="94" y="2699" class="s b">TDS return</text>
+<text x="284" y="2699" class="s">31 jul · oct · jan · may</text>
+<text x="564" y="2699" class="s d">deductors</text>
+<text x="94" y="2726" class="s b">advance tax</text>
+<text x="284" y="2726" class="s">15 jun · sep · dec · mar</text>
+<text x="564" y="2726" class="s d">taxpayers above limit</text>
+<text x="94" y="2753" class="s b">tax audit</text>
+<text x="284" y="2753" class="s">30 sep</text>
+<text x="564" y="2753" class="s d">audit cases</text>
+<text x="94" y="2780" class="s b">ITR</text>
+<text x="284" y="2780" class="s">31 jul · 31 oct (audit)</text>
+<text x="564" y="2780" class="s d">all</text>
+<text x="94" y="2807" class="s b">GSTR-9 / 9C</text>
+<text x="284" y="2807" class="s">31 dec</text>
+<text x="564" y="2807" class="s d">turnover above limit</text>
+<text x="94" y="2834" class="s b">AOC-4 · MGT-7</text>
+<text x="284" y="2834" class="s">30 · 60 days from AGM</text>
+<text x="564" y="2834" class="s d">companies</text>
+<line x1="94" y1="2878" x2="766" y2="2878" class="rule"/>
+<text x="94" y="2904" class="xs d">dates live on one page you edit when the law changes · the brain</text>
+<text x="94" y="2926" class="xs d">spawns one job per client per cycle and puts it on the timeline</text>
+<rect x="830" y="2542" width="700" height="420" class="bx-agent"/>
+<text x="854" y="2582" class="lab">ONE JOB · projects/wt-gstr3b-2026-10.md</text>
+<text x="854" y="2618" class="s d">client: widget-traders · service: GSTR-3B · period: sep 2026</text>
+<text x="854" y="2644" class="s">owner: article a · reviewer: manager m · due: 20 oct</text>
+<text x="854" y="2670" class="s">status: in review · started 12 oct · docs received 15 oct</text>
+<text x="854" y="2696" class="s">checklist: concepts/checklists/gstr3b (9 of 11 ticked)</text>
+<text x="854" y="2722" class="s">open: 2 purchase bills not in 2B · ask client</text>
+<text x="854" y="2748" class="s">template: templates/client-query-gst v2</text>
+<text x="854" y="2774" class="s">fee: in retainer · bill with quarter</text>
+<text x="854" y="2800" class="s d">&lt;!-- timeline --&gt;</text>
+<text x="854" y="2826" class="s">2026-10-15  books received · 2B pulled · match run</text>
+<text x="854" y="2852" class="s">2026-10-18  draft 3B ready · sent to reviewer ◆</text>
+<line x1="854" y1="2878" x2="1506" y2="2878" class="rule"/>
+<text x="854" y="2904" class="xs d">views the brain gives you: by client · by staff · by service line</text>
+<text x="854" y="2926" class="xs d">· by due date · what is late · what is waiting on the client</text>
+<text x="70" y="3036" class="sec">06 / KNOWLEDGE + TEMPLATE STRATEGY</text>
+<text x="1530" y="3036" class="s d" text-anchor="end">the firm&#x27;s way of working, written once, used by every job</text>
+<rect x="70" y="3072" width="720" height="330" class="bx-brain"/>
+<text x="94" y="3112" class="lab">KNOWLEDGE · concepts/</text>
+<text x="94" y="3148" class="s">law/         sections, rules, circulars · with source + date checked</text>
+<text x="94" y="3175" class="s">positions/   the stand we take, when, why · who approved it</text>
+<text x="94" y="3202" class="s">sops/        how we onboard, run an audit, reply to a notice</text>
+<text x="94" y="3229" class="s">checklists/  per service: GSTR-3B, TDS, ITR, audit, ROC</text>
+<text x="94" y="3256" class="s">lessons/     every correction a CA makes becomes a line here</text>
+<text x="94" y="3283" class="s"></text>
+<text x="94" y="3310" class="s">a page says &#x27;not covered&#x27; when the firm has no position yet</text>
+<text x="94" y="3337" class="s">stale check: anything older than its review date is flagged</text>
+<text x="94" y="3380" class="xs d">the agent reads these before drafting · the draft cites the page it used</text>
+<rect x="830" y="3072" width="700" height="330" class="bx-brain"/>
+<text x="854" y="3112" class="lab">TEMPLATES · templates/ · one page per template</text>
+<text x="854" y="3148" class="s">engagement-letter      v3 · use: new client · owner: partner</text>
+<text x="854" y="3175" class="s">client-query-gst       v2 · use: 2B mismatch · owner: manager</text>
+<text x="854" y="3202" class="s">asmt-10-reply          v4 · use: 3B vs 2B notice · reviewed sep</text>
+<text x="854" y="3229" class="s">audit-report-pvt       v6 · use: pvt ltd audit · reviewed apr</text>
+<text x="854" y="3256" class="s">representation-letter  v2 · use: every audit · owner: partner</text>
+<text x="854" y="3283" class="s">monthly-mis            v1 · use: retainer clients · owner: m</text>
+<text x="854" y="3310" class="s"></text>
+<text x="854" y="3337" class="s">the agent fills a template from the client page, never by hand</text>
+<text x="854" y="3380" class="xs d">a change a CA makes twice becomes the next version · usage logs on the client</text>
+<text x="70" y="3476" class="sec">07 / STRATEGY · THE PARTNER VIEW</text>
+<text x="1530" y="3476" class="s d" text-anchor="end">the private layer · reads everything, is read by no one else</text>
+<rect x="70" y="3512" width="720" height="290" class="bx-gate"/>
+<text x="94" y="3552" class="lab gate">STRATEGY PAGES · strategy/</text>
+<text x="94" y="3588" class="s">goals-2026        revenue, service mix, clients to add or drop</text>
+<text x="94" y="3615" class="s">pricing           retainer bands, hourly floor, scope rules</text>
+<text x="94" y="3642" class="s">profitability     fees vs hours per client · from your billing export</text>
+<text x="94" y="3669" class="s">capacity          who is loaded when · season plan · hiring</text>
+<text x="94" y="3696" class="s">client-tiers      A/B/C by fee, risk, payment habit</text>
+<text x="94" y="3723" class="s">decisions         what we decided, when, why · never deleted</text>
+<text x="94" y="3750" class="s">referrals         who sends work, who we send to</text>
+<text x="94" y="3784" class="xs d">numbers are imported, not invented · every figure keeps its source file</text>
+<rect x="830" y="3512" width="700" height="290" class="bx-gate"/>
+<text x="854" y="3552" class="lab gate">QUESTIONS THE PARTNER ASKS THE BRAIN</text>
+<text x="854" y="3588" class="s">· which clients take the most hours for the least fee?</text>
+<text x="854" y="3615" class="s">· who is overloaded in the september audit season?</text>
+<text x="854" y="3642" class="s">· which service line grew this year, which shrank?</text>
+<text x="854" y="3669" class="s">· which clients have an open notice or a late payment?</text>
+<text x="854" y="3696" class="s">· what did we decide about scope creep in march, and why?</text>
+<text x="854" y="3723" class="s">· which templates have not been reviewed in a year?</text>
+<text x="854" y="3750" class="s">· which positions do we take that a new circular affects?</text>
+<text x="854" y="3784" class="xs d">answers cite pages · the brain says &#x27;not in the brain&#x27; instead of guessing</text>
+<text x="70" y="3876" class="sec">08 / HOW ANY PIECE OF WORK MOVES</text>
+<text x="1530" y="3876" class="s d" text-anchor="end">a return, a notice, a new client, an advisory ask · same eight steps</text>
+<rect x="70" y="3912" width="335" height="150" class="bx-in"/>
+<text x="90" y="3954" class="h">1  WORK ARRIVES</text>
+<text x="90" y="3992" class="s">return due · notice · ask</text>
+<text x="90" y="4019" class="s">new client · partner idea</text>
+<path d="M408,3987 H440" class="ln" marker-end="url(#ah)"/>
+<rect x="445" y="3912" width="335" height="150" class="bx-brain"/>
+<text x="465" y="3954" class="h">2  FILED</text>
+<text x="465" y="3992" class="s">under client + engagement</text>
+<text x="465" y="4019" class="s">owner, due date, status</text>
+<path d="M783,3987 H815" class="ln" marker-end="url(#ah)"/>
+<rect x="820" y="3912" width="335" height="150" class="bx-brain"/>
+<text x="840" y="3954" class="h">3  CONTEXT FOUND</text>
+<text x="840" y="3992" class="s">client history + position</text>
+<text x="840" y="4019" class="s">law, SOP, past lessons</text>
+<path d="M1158,3987 H1190" class="ln" marker-end="url(#ah)"/>
+<rect x="1195" y="3912" width="335" height="150" class="bx-brain"/>
+<text x="1215" y="3954" class="h">4  TEMPLATE PULLED</text>
+<text x="1215" y="3992" class="s">the right version</text>
+<text x="1215" y="4019" class="s">filled from the client page</text>
+<rect x="70" y="4142" width="335" height="150" class="bx-agent"/>
+<text x="90" y="4184" class="h">5  WORK PREPARED</text>
+<text x="90" y="4222" class="s">draft, working, checklist</text>
+<text x="90" y="4249" class="s">every number shows source</text>
+<path d="M408,4217 H440" class="ln" marker-end="url(#ah)"/>
+<rect x="445" y="4142" width="335" height="150" class="bx-gate"/>
+<text x="465" y="4184" class="h gate">◆ 6 · A CA REVIEWS</text>
+<text x="465" y="4222" class="s">yes · change it · no</text>
+<text x="465" y="4249" class="s">never files on its own</text>
+<path d="M783,4217 H815" class="ln" marker-end="url(#ah)"/>
+<rect x="820" y="4142" width="335" height="150" class="bx-ok"/>
+<text x="840" y="4184" class="h ok">⚓ 7  DONE + LOGGED</text>
+<text x="840" y="4222" class="s">sent or filed by a person</text>
+<text x="840" y="4249" class="s">timeline + billing note</text>
+<path d="M1158,4217 H1190" class="ln" marker-end="url(#ah)"/>
+<rect x="1195" y="4142" width="335" height="150" class="bx-brain"/>
+<text x="1215" y="4184" class="h">↺ 8  REMEMBERED</text>
+<text x="1215" y="4222" class="s">lesson, template version,</text>
+<text x="1215" y="4249" class="s">position, client note</text>
+<path d="M1362,4067 V4102 H237 V4136" class="ln" marker-end="url(#ah)"/>
+<text x="70" y="4366" class="sec">09 / WHO SEES WHAT · WHERE IT RUNS</text>
+<text x="1530" y="4366" class="s d" text-anchor="end">one brain per partner or practice group · separation is physical</text>
+<rect x="70" y="4402" width="900" height="348" class="bx"/>
+<rect x="70" y="4402" width="900" height="58" class="thead"/>
+<text x="86" y="4438" class="lab"></text>
+<text x="246" y="4438" class="lab">strategy</text>
+<text x="426" y="4438" class="lab">clients + work</text>
+<text x="646" y="4438" class="lab">knowledge</text>
+<text x="836" y="4438" class="lab">other groups</text>
+<text x="86" y="4496" class="s b">partner</text>
+<text x="246" y="4496" class="s">✓ read + change</text>
+<text x="426" y="4496" class="s">✓ read · approves</text>
+<text x="646" y="4496" class="s">✓ read + change</text>
+<text x="836" y="4496" class="s">✕</text>
+<line x1="70" y1="4460" x2="970" y2="4460" class="rule"/>
+<text x="86" y="4554" class="s b">manager</text>
+<text x="246" y="4554" class="s">✕</text>
+<text x="426" y="4554" class="s">✓ read · suggests</text>
+<text x="646" y="4554" class="s">✓ read · suggests</text>
+<text x="836" y="4554" class="s">✕</text>
+<line x1="70" y1="4518" x2="970" y2="4518" class="rule"/>
+<text x="86" y="4612" class="s b">article</text>
+<text x="246" y="4612" class="s">✕</text>
+<text x="426" y="4612" class="s">✓ read · drafts</text>
+<text x="646" y="4612" class="s">✓ read</text>
+<text x="836" y="4612" class="s">✕</text>
+<line x1="70" y1="4576" x2="970" y2="4576" class="rule"/>
+<text x="86" y="4670" class="s b">client</text>
+<text x="246" y="4670" class="s">✕</text>
+<text x="426" y="4670" class="s">what a CA sends</text>
+<text x="646" y="4670" class="s">✕</text>
+<text x="836" y="4670" class="s">✕</text>
+<line x1="70" y1="4634" x2="970" y2="4634" class="rule"/>
+<text x="86" y="4728" class="s b">outsider</text>
+<text x="246" y="4728" class="s">✕</text>
+<text x="426" y="4728" class="s">✕</text>
+<text x="646" y="4728" class="s">✕</text>
+<text x="836" y="4728" class="s">✕</text>
+<line x1="70" y1="4692" x2="970" y2="4692" class="rule"/>
+<rect x="1010" y="4402" width="520" height="348" class="bx"/>
+<text x="1032" y="4436" class="lab">WHERE IT RUNS</text>
+<text x="1032" y="4466" class="xs d">start</text>
+<text x="1102" y="4466" class="s">one file on a firm machine · no server</text>
+<text x="1032" y="4493" class="xs d">grow</text>
+<text x="1102" y="4493" class="s">postgres + pgvector on your own box or a</text>
+<text x="1102" y="4520" class="s">managed DB in India · 1000+ files</text>
+<text x="1032" y="4547" class="xs d">access</text>
+<text x="1102" y="4547" class="s">no per-user locks inside one brain today,</text>
+<text x="1102" y="4574" class="s">so one brain per partner, no shared keys,</text>
+<text x="1102" y="4601" class="s">staff go through the agent, not a key</text>
+<text x="1032" y="4628" class="xs d">data</text>
+<text x="1102" y="4628" class="s">pages and the DB stay on the firm&#x27;s server</text>
+<text x="1032" y="4655" class="xs d">leaves</text>
+<text x="1102" y="4655" class="s">chunk text to the embedding API (OpenAI),</text>
+<text x="1102" y="4682" class="s">queries to a small model for expansion ·</text>
+<text x="1102" y="4709" class="s">turn both off: keyword + graph, none out</text>
+<text x="70" y="4824" class="sec">10 / THE RHYTHM</text>
+<text x="1530" y="4824" class="s d" text-anchor="end">scheduled jobs the brain runs for the firm</text>
+<rect x="70" y="4860" width="1460" height="312" class="bx"/>
+<text x="92" y="4893" class="lab">EVERY MORNING</text>
+<text x="330" y="4893" class="s">a due list per person: returns, replies, hearings, client docs awaited · what is late</text>
+<line x1="70" y1="4912" x2="1530" y2="4912" class="rule"/>
+<text x="92" y="4945" class="lab">ALL DAY</text>
+<text x="330" y="4945" class="s">drafts and workings wait in one approval list: yes, change it or no</text>
+<line x1="70" y1="4964" x2="1530" y2="4964" class="rule"/>
+<text x="92" y="4997" class="lab">EVERY NIGHT</text>
+<text x="330" y="4997" class="s">sync new files, extract links, embed, spawn next cycle&#x27;s jobs, flag stale positions</text>
+<line x1="70" y1="5016" x2="1530" y2="5016" class="rule"/>
+<text x="92" y="5049" class="lab">EVERY MONDAY</text>
+<text x="330" y="5049" class="s">one memo per partner: filings done, notices open, hours vs fees, fees to bill</text>
+<line x1="70" y1="5068" x2="1530" y2="5068" class="rule"/>
+<text x="92" y="5101" class="lab">EVERY MONTH</text>
+<text x="330" y="5101" class="s">client profitability, template review list, health check: dead links, orphans, coverage</text>
+<line x1="70" y1="5120" x2="1530" y2="5120" class="rule"/>
+<text x="92" y="5153" class="lab">EVERY QUARTER</text>
+<text x="330" y="5153" class="s">strategy review from the pages: goals vs actuals, capacity for next season, tiers</text>
+<text x="70" y="5246" class="sec">11 / ROLLOUT IN FIVE STEPS</text>
+<text x="1530" y="5246" class="s d" text-anchor="end">one partner first · prove retrieval before adding clients</text>
+<rect x="70" y="5282" width="268" height="150" class="bx-agent"/>
+<text x="88" y="5322" class="h">1 PILOT</text>
+<text x="88" y="5358" class="s">one partner&#x27;s clients</text>
+<text x="88" y="5383" class="s">local brain, the folders</text>
+<text x="88" y="5408" class="s">above, no server yet</text>
+<path d="M341,5357 H363" class="ln" marker-end="url(#ah)"/>
+<rect x="368" y="5282" width="268" height="150" class="bx"/>
+<text x="386" y="5322" class="h">2 SEED</text>
+<text x="386" y="5358" class="s">client master from the</text>
+<text x="386" y="5383" class="s">tally, zoho and billing</text>
+<text x="386" y="5408" class="s">exports · one page each</text>
+<path d="M639,5357 H661" class="ln" marker-end="url(#ah)"/>
+<rect x="666" y="5282" width="268" height="150" class="bx"/>
+<text x="684" y="5322" class="h">3 LOAD</text>
+<text x="684" y="5358" class="s">calendar, checklists,</text>
+<text x="684" y="5383" class="s">templates, positions and</text>
+<text x="684" y="5408" class="s">two years of history</text>
+<path d="M937,5357 H959" class="ln" marker-end="url(#ah)"/>
+<rect x="964" y="5282" width="268" height="150" class="bx"/>
+<text x="982" y="5322" class="h">4 MEASURE</text>
+<text x="982" y="5358" class="s">20 real questions from</text>
+<text x="982" y="5383" class="s">the partner, scored on</text>
+<text x="982" y="5408" class="s">recall · fix schema 1st</text>
+<path d="M1235,5357 H1257" class="ln" marker-end="url(#ah)"/>
+<rect x="1262" y="5282" width="268" height="150" class="bx-agent"/>
+<text x="1280" y="5322" class="h">5 EXPAND</text>
+<text x="1280" y="5358" class="s">night jobs, email intake</text>
+<text x="1280" y="5383" class="s">next partner · postgres</text>
+<text x="1280" y="5408" class="s">when the brain outgrows</text>
+<text x="70" y="5506" class="sec">12 / NOT IN THE BOX · NON-NEGOTIABLES</text>
+<rect x="70" y="5542" width="710" height="258" class="bx"/>
+<text x="92" y="5578" class="lab">NOT IN THE BOX · BUILD IT OR KEEP YOUR TOOL</text>
+<text x="92" y="5612" class="s">· no tally, GST-portal or income-tax-portal connector:</text>
+<text x="92" y="5638" class="s">  small collectors drop exports into sources/ on a schedule</text>
+<text x="92" y="5664" class="s">· not a billing, time-sheet or document system: those stay,</text>
+<text x="92" y="5690" class="s">  the brain imports their exports and links the facts</text>
+<text x="92" y="5716" class="s">· no per-user access rules inside one brain: split brains</text>
+<text x="92" y="5742" class="s">· no local embedding model yet: semantic search uses the</text>
+<text x="92" y="5768" class="s">  OpenAI embedding API · keyword + graph mode needs nothing</text>
+<rect x="820" y="5542" width="710" height="258" class="bx-never"/>
+<text x="842" y="5578" class="lab never">THE BRAIN NEVER</text>
+<text x="842" y="5612" class="s">✕ files a return or sends a reply without a CA&#x27;s yes</text>
+<text x="842" y="5638" class="s">✕ invents a number, a section, a date or a fee</text>
+<text x="842" y="5664" class="s">✕ shows a figure without the source it came from</text>
+<text x="842" y="5690" class="s">✕ shares a login: one person, one key</text>
+<text x="842" y="5716" class="s">✕ lets client data leave the firm&#x27;s server</text>
+<text x="842" y="5742" class="s">✕ keeps passwords, OTPs or DSC PINs in any page</text>
+<text x="842" y="5768" class="s">✕ answers from outside the brain without saying so</text>
+<text x="70" y="5874" class="sec">EXAMPLE · ONE MONTH FOR ONE CLIENT, START TO FINISH</text>
+<text x="70" y="5918">1  1 oct: the night job spawns widget traders&#x27; GSTR-3B job for september, owner article a, due 20 oct</text>
+<text x="70" y="5952">2  the morning list shows it · on 15 oct books arrive, the brain pulls 2B, runs the match, two bills are missing</text>
+<text x="70" y="5986">3  the agent fills client-query-gst v2 from the client page · the manager says yes · the client replies in a day</text>
+<text x="70" y="6020">4  the draft 3B and workings go to the manager ◆ · she changes one head · the partner files it from the firm login</text>
+<text x="70" y="6054">5  ARN, date and &#x27;bill with quarter&#x27; land on the client timeline · the correction becomes a lesson line</text>
+<text x="70" y="6088">6  28 oct: an ASMT-10 arrives · filed under the client, template v4 pulled, last year&#x27;s position found, reply due 14 nov</text>
+<text x="70" y="6122">7  monday memo: 1 return filed, 1 notice open, 11 hours on a retainer client this month, fee realisation flagged</text>
+<line x1="70" y1="6180" x2="1530" y2="6180" class="rule-fg"/>
+<rect x="70" y="6212" width="36" height="24" class="bx-in"/>
+<text x="118" y="6232" class="s d">what comes in</text>
+<rect x="286" y="6212" width="36" height="24" class="bx-brain"/>
+<text x="334" y="6232" class="s d">the brain</text>
+<rect x="464" y="6212" width="36" height="24" class="bx-agent"/>
+<text x="512" y="6232" class="s d">the agent · work</text>
+<rect x="709" y="6212" width="36" height="24" class="bx-gate"/>
+<text x="757" y="6232" class="s d">◆ partner only · a CA must say yes</text>
+<rect x="1127" y="6212" width="36" height="24" class="bx-ok"/>
+<text x="1175" y="6232" class="s d">⚓ a result</text>
+<rect x="1315" y="6212" width="36" height="24" class="bx-never"/>
+<text x="1363" y="6232" class="s d">✕ never</text>
+<text x="70" y="6276" class="s d">↺ repeats · pages are markdown you can read without the brain · the brain is memory, the CA is judgment</text>
+<text x="1530" y="6306" class="s d" text-anchor="end">foresights brain · for CA firms</text>
 </svg>
 </div>
 </body>
