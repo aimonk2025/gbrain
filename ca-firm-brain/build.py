@@ -129,7 +129,7 @@ def poster():
 
     # ---------- header
     g.text(L, 96, "A CA FIRM ON ONE BRAIN", "t")
-    g.text(R, 96, "the whole practice · brain map", "s d", "end")
+    g.text(R, 96, "built on gbrain · open source, MIT", "s d", "end")
     g.text(L, 140, "clients, work, knowledge, templates and strategy in one memory an agent can read and write,", "sub")
     g.text(L, 170, "so no due date, position, template version or client fact depends on one person remembering", "sub")
     g.hr(204, "rule-fg")
@@ -155,9 +155,78 @@ def poster():
             g.path(f"M{x + bw + 3},{top + bh // 2} H{x + bw + gap - 5}")
     y = top + bh
 
-    # ---------- 02 what the brain holds: five domains
+    # ---------- 02 what powers it: gbrain
     y += 74
-    g.section(y, "02 / WHAT THE BRAIN HOLDS", "five domains · one primary home per fact · the folder decides the page type")
+    g.section(y, "02 / WHAT POWERS IT · GBRAIN", "the engine under the poster · every item below is a shipped command or module")
+    fw, fg_, fh = (CW - 60) // 3, 30, 266
+    feats = [
+        ("ENGINES + STORAGE", "pglite · postgres + pgvector",
+         ["· PGLite: embedded Postgres in one file, no server",
+          "· Postgres + pgvector for scale: Supabase or own",
+          "· gbrain migrate --to supabase | pglite, both ways",
+          "· markdown is the source of truth, DB is the index",
+          "· page versions kept · gbrain revert to any one",
+          "· raw data store for exports, files, attachments",
+          "· S3, Supabase Storage or local disk for files"], "bx-brain"),
+        ("SEARCH", "hybrid · graph-aware · measurable",
+         ["· keyword + vector fused by reciprocal rank fusion",
+          "· intent classifier: entity, time, event, general",
+          "· multi-query expansion, backlink boost, dedup",
+          "· keyword-only mode needs no API key at all",
+          "· gbrain eval: precision, recall, MRR, nDCG on",
+          "  your own 20 questions, A/B two configs",
+          "· published benchmark: recall@5 83% to 95%"], "bx-brain"),
+        ("KNOWLEDGE GRAPH", "typed links · timeline · zero LLM",
+         ["· every page save extracts links: works_at,",
+          "  advises, attended, source, mentions, founded",
+          "· dated timeline entries per company and person",
+          "· gbrain graph-query <slug> --depth 2 --type T",
+          "· gbrain orphans: pages nobody links to",
+          "· backlink checker and fixer, dead-link audit",
+          "· gbrain extract links|timeline over fs or db"], "bx-brain"),
+        ("AGENT SURFACE", "one contract · cli + mcp · 26 skills",
+         ["· 41 operations defined once, CLI and MCP",
+          "  server both generated from that contract",
+          "· MCP over stdio for Claude Code, Cursor, any",
+          "  client · remote MCP with bearer tokens",
+          "· 26 skills: brain-ops, query, enrich, meeting-",
+          "  ingestion, citation-fixer, maintain, reports,",
+          "  cron-scheduler, data-research, soul-audit"], "bx-agent"),
+        ("INGESTION", "files · folders · audio · recipes",
+         ["· gbrain import <dir> with resume and workers",
+          "· live sync: a watched folder stays indexed",
+          "· 3-tier chunking: recursive, semantic, LLM-guided",
+          "· audio transcription: Groq Whisper or OpenAI",
+          "· recipes: email, calendar, meetings, X, voice",
+          "· file upload with path confinement for agents",
+          "· data-research: YAML recipe, email to tracker"], "bx-in"),
+        ("OPERATIONS", "runs itself · checks itself",
+         ["· gbrain autopilot --install: sync, extract, embed",
+          "· Minions job queue: retries, backoff, timeouts,",
+          "  parent-child fan-out, stall rescue, idempotency",
+          "· gbrain doctor --fix: health checks, auto-repair",
+          "· brain score 0-100: embeds, links, time, orphans",
+          "· gbrain upgrade with migrations + a repair trail",
+          "· lint, publish --password (encrypted HTML page)"], "bx-agent"),
+    ]
+    top = y + 36
+    for i, (name, sub, det, cls) in enumerate(feats):
+        row, col = divmod(i, 3)
+        x = L + col * (fw + fg_)
+        yy = top + row * (fh + 22)
+        g.rect(x, yy, fw, fh, cls)
+        g.text(x + 20, yy + 38, name, "h", maxw=fw - 40)
+        g.text(x + 20, yy + 62, sub, "s d", maxw=fw - 40)
+        g.lines(x + 20, yy + 94, det, "xs", 22, maxw=fw - 40)
+    y = top + 2 * fh + 22 + 40
+    g.rect(L, y - 24, CW, 84, "ex")
+    g.text(L + 22, y + 6, "gbrain init  ·  gbrain import ./brain  ·  gbrain query \"open notices this quarter\"  ·  gbrain graph-query widget-traders --depth 2", "s", maxw=CW - 44)
+    g.text(L + 22, y + 36, "gbrain autopilot --install  ·  gbrain jobs submit  ·  gbrain doctor --fix  ·  gbrain eval  ·  gbrain serve  (MCP for the agent)", "s", maxw=CW - 44)
+    y += 60
+
+    # ---------- 03 what the brain holds: five domains
+    y += 74
+    g.section(y, "03 / WHAT THE BRAIN HOLDS", "five domains · one primary home per fact · the folder decides the page type")
     top = y + 36
     dw, dg, dh = 272, 25, 276
     domains = [
@@ -192,7 +261,7 @@ def poster():
 
     # ---------- 03 the client master
     y += 74
-    g.section(y, "03 / THE CLIENT MASTER · ONE PAGE PER CLIENT", "top = true now · bottom = history")
+    g.section(y, "04 / THE CLIENT MASTER · ONE PAGE PER CLIENT", "top = true now · bottom = history")
     top = y + 36
     lw, rw, gp = 720, 700, 40
     bh3 = 426
@@ -240,7 +309,7 @@ def poster():
 
     # ---------- 04 the work engine
     y += 74
-    g.section(y, "04 / THE WORK ENGINE", "recurring compliance + one-off engagements + tasks · the morning list is built from this")
+    g.section(y, "05 / THE WORK ENGINE", "recurring compliance + one-off engagements + tasks · the morning list is built from this")
     top = y + 36
     bh4 = 420
     g.rect(L, top, lw, bh4, "bx-agent")
@@ -291,7 +360,7 @@ def poster():
 
     # ---------- 05 knowledge + template strategy
     y += 74
-    g.section(y, "05 / KNOWLEDGE + TEMPLATE STRATEGY", "the firm's way of working, written once, used by every job")
+    g.section(y, "06 / KNOWLEDGE + TEMPLATE STRATEGY", "the firm's way of working, written once, used by every job")
     top = y + 36
     bh5 = 330
     g.rect(L, top, lw, bh5, "bx-brain")
@@ -327,7 +396,7 @@ def poster():
 
     # ---------- 06 strategy and the partner view
     y += 74
-    g.section(y, "06 / STRATEGY · THE PARTNER VIEW", "the private layer · reads everything, is read by no one else")
+    g.section(y, "07 / STRATEGY · THE PARTNER VIEW", "the private layer · reads everything, is read by no one else")
     top = y + 36
     bh6 = 290
     g.rect(L, top, lw, bh6, "bx-gate")
@@ -361,7 +430,7 @@ def poster():
 
     # ---------- 07 how work moves
     y += 74
-    g.section(y, "07 / HOW ANY PIECE OF WORK MOVES", "a return, a notice, a new client, an advisory ask · same eight steps")
+    g.section(y, "08 / HOW ANY PIECE OF WORK MOVES", "a return, a notice, a new client, an advisory ask · same eight steps")
     steps = [
         ("1  WORK ARRIVES", ["return due · notice · ask", "new client · partner idea"], "bx-in"),
         ("2  FILED", ["under client + engagement", "owner, due date, status"], "bx-brain"),
@@ -392,7 +461,7 @@ def poster():
 
     # ---------- 08 who sees what + where it runs
     y += 74
-    g.section(y, "08 / WHO SEES WHAT · WHERE IT RUNS", "one brain per partner or practice group · separation is physical")
+    g.section(y, "09 / WHO SEES WHAT · WHERE IT RUNS", "one brain per partner or practice group · separation is physical")
     top = y + 36
     tw = 900
     cols = ["", "strategy", "clients + work", "knowledge", "other groups"]
@@ -404,14 +473,14 @@ def poster():
         ["client", "✕", "what a CA sends", "✕", "✕"],
         ["outsider", "✕", "✕", "✕", "✕"],
     ]
-    rh = 50
+    rh = 58
     th = rh * (len(rows) + 1)
     g.rect(L, top, tw, th, "bx")
     g.out.append(f'<rect x="{L}" y="{top}" width="{tw}" height="{rh}" class="thead"/>')
     for r, row in enumerate([cols] + rows):
         x = L
         for c, cell in enumerate(row):
-            g.text(x + 16, top + r * rh + 32, cell, "lab" if r == 0 else ("s b" if c == 0 else "s"), maxw=cwid[c] - 20)
+            g.text(x + 16, top + r * rh + 36, cell, "lab" if r == 0 else ("s b" if c == 0 else "s"), maxw=cwid[c] - 20)
             x += cwid[c]
         if r:
             g.hr(top + r * rh, "rule", L, L + tw)
@@ -419,7 +488,7 @@ def poster():
     wx = L + tw + 40
     ww = R - wx
     g.rect(wx, top, ww, th, "bx")
-    g.text(wx + 22, top + 36, "WHERE IT RUNS", "lab")
+    g.text(wx + 22, top + 34, "WHERE IT RUNS", "lab")
     run = [
         ("start", "one file on a firm machine · no server"),
         ("grow", "postgres + pgvector on your own box or a"),
@@ -427,9 +496,12 @@ def poster():
         ("access", "no per-user locks inside one brain today,"),
         ("", "so one brain per partner, no shared keys,"),
         ("", "staff go through the agent, not a key"),
-        ("data", "stays on the firm's server · you own it"),
+        ("data", "pages and the DB stay on the firm's server"),
+        ("leaves", "chunk text to the embedding API (OpenAI),"),
+        ("", "queries to a small model for expansion ·"),
+        ("", "turn both off: keyword + graph, none out"),
     ]
-    yy = top + 68
+    yy = top + 64
     for lab, body in run:
         if lab:
             g.text(wx + 22, yy, lab, "xs d")
@@ -439,7 +511,7 @@ def poster():
 
     # ---------- 09 the rhythm
     y += 74
-    g.section(y, "09 / THE RHYTHM", "scheduled jobs the brain runs for the firm")
+    g.section(y, "10 / THE RHYTHM", "scheduled jobs the brain runs for the firm")
     rhythm = [
         ("EVERY MORNING", "a due list per person: returns, replies, hearings, client docs awaited · what is late"),
         ("ALL DAY", "drafts and workings wait in one approval list: yes, change it or no"),
@@ -461,7 +533,7 @@ def poster():
 
     # ---------- 10 rollout
     y += 74
-    g.section(y, "10 / ROLLOUT IN FIVE STEPS", "one partner first · prove retrieval before adding clients")
+    g.section(y, "11 / ROLLOUT IN FIVE STEPS", "one partner first · prove retrieval before adding clients")
     roll = [
         ("1 PILOT", ["one partner's clients", "local brain, the folders", "above, no server yet"]),
         ("2 SEED", ["client master from the", "tally, zoho and billing", "exports · one page each"]),
@@ -482,10 +554,10 @@ def poster():
 
     # ---------- 11 not in the box + never
     y += 74
-    g.section(y, "11 / NOT IN THE BOX · NON-NEGOTIABLES")
+    g.section(y, "12 / NOT IN THE BOX · NON-NEGOTIABLES")
     top = y + 36
     hw = (CW - 40) // 2
-    bh9 = 232
+    bh9 = 258
     g.rect(L, top, hw, bh9, "bx")
     g.text(L + 22, top + 36, "NOT IN THE BOX · BUILD IT OR KEEP YOUR TOOL", "lab")
     nib = [
@@ -494,7 +566,8 @@ def poster():
         "· not a billing, time-sheet or document system: those stay,",
         "  the brain imports their exports and links the facts",
         "· no per-user access rules inside one brain: split brains",
-        "· no claim about audit-documentation retention standards",
+        "· no local embedding model yet: semantic search uses the",
+        "  OpenAI embedding API · keyword + graph mode needs nothing",
     ]
     g.lines(L + 22, top + 70, nib, "s", 26, maxw=hw - 44)
 
@@ -508,6 +581,7 @@ def poster():
         "✕ shares a login: one person, one key",
         "✕ lets client data leave the firm's server",
         "✕ keeps passwords, OTPs or DSC PINs in any page",
+        "✕ answers from outside the brain without saying so",
     ]
     g.lines(nx + 22, top + 70, never, "s", 26, maxw=hw - 44)
     y = top + bh9
@@ -537,9 +611,9 @@ def poster():
         g.rect(x, ly - 20, 36, 24, cls)
         g.text(x + 48, ly, lab, "s d")
         x += 48 + int(len(lab) * 9.6) + 44
-    g.text(L, ly + 44, "↺ repeats · pages are markdown you can read without the brain · the brain is memory, the CA is judgment", "s d")
-    g.text(R, ly + 44, "the whole practice · brain map", "s d", "end")
-    h = ly + 90
+    g.text(L, ly + 44, "↺ repeats · pages are markdown you can read without gbrain · the brain is memory, the CA is judgment", "s d")
+    g.text(R, ly + 74, "built on gbrain · github.com/garrytan/gbrain · MIT", "s d", "end")
+    h = ly + 118
 
     for w_ in g.warn:
         print("WARN", w_)
