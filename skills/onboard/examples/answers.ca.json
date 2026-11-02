@@ -1,0 +1,36 @@
+{
+  "pack": "ca",
+  "pack_version": "1.0.0",
+  "started_at": "2026-11-02T09:10:00+05:30",
+  "answered_by": "a-partner",
+  "brain": "a-partner",
+  "answers": {
+    "firm": { "firm_name": "Example & Associates", "firm_address": "12 Example Road, Pune 411001", "firm_city": "Pune", "partner_membership_no": "000000", "firm_registration_no": "000000W" },
+    "staff": [ { "name": "A Partner", "role": "partner" }, { "name": "M Manager", "role": "manager" }, { "name": "R Article", "role": "article" } ],
+    "services": ["gstr-1", "gstr-3b", "gst-annual", "tds", "itr", "tax-audit", "statutory-audit", "roc"],
+    "partners": 1,
+    "review_chain": "manager-then-partner",
+    "books_system": ["tally-prime", "excel"],
+    "client_export": "sources/2026-11-02-client-master.csv",
+    "calendar_confirm": { "confirmed": true, "edits": [] },
+    "search_mode": "keyword-graph",
+    "hosting": "local-file",
+    "review_cadence": { "template_review_days": 365, "position_review_days": 365 },
+    "risk_tiers": {
+      "tier_a": "high fee or listed or group company; partner reviews every filing",
+      "tier_b": "regular client; manager reviews, partner signs",
+      "tier_c": "small or irregular; article prepares, manager reviews and signs"
+    },
+    "quiet_hours": { "start": "21:00", "end": "08:00", "timezone": "Asia/Kolkata" },
+    "demo": "run"
+  },
+  "facts": {
+    "partners": { "value": 1, "source": "staff answer: one role=partner" },
+    "client_export": { "value": "sources/2026-11-02-client-master.csv", "source": "file given by the user" }
+  },
+  "changed_from_default": ["books_system"],
+  "skipped": ["client_sharing"],
+  "confirmed": true,
+  "confirmed_by": "a-partner",
+  "confirmed_at": "2026-11-02T09:32:00+05:30"
+}

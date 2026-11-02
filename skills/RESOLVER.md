@@ -80,6 +80,7 @@ below stops at a human gate before anything leaves the firm.
 | Trigger | Skill |
 |---------|-------|
 | "Set up GBrain", first boot | `skills/setup/SKILL.md` |
+| "Onboard this firm", "run onboarding", "install the pack", "onboarding interview" | `skills/onboard/SKILL.md` |
 | "Migrate from Obsidian/Notion/Logseq" | `skills/migrate/SKILL.md` |
 | Brain health check, maintenance run | `skills/maintain/SKILL.md` |
 | "Extract links", "build link graph", "populate timeline" | `skills/maintain/SKILL.md` (extraction sections) |

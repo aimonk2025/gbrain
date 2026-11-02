@@ -183,6 +183,11 @@
       "name": "ca-fee-review",
       "path": "ca-fee-review/SKILL.md",
       "description": "Partner-only profitability review from imported time and billing exports: fee vs hours per client, candidates by the pricing page's rules, fee letters at the gate, decisions recorded"
+    },
+    {
+      "name": "onboard",
+      "path": "onboard/SKILL.md",
+      "description": "Industry onboarding from a pack manifest: bounded interview in rounds with recommended answers, facts before questions, confirmed answers file at the gate, deterministic apply, optional demo load, show and wipe"
     }
   ],
   "dependencies": {

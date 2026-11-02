@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Onboarding answers",
+  "description": "Written by skills/onboard/SKILL.md at the gate. The same file, applied twice, must produce the same brain.",
+  "type": "object",
+  "required": ["pack", "pack_version", "started_at", "answers", "facts", "changed_from_default", "confirmed"],
+  "additionalProperties": false,
+  "properties": {
+    "pack": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "pack_version": { "type": "string" },
+    "started_at": { "type": "string", "format": "date-time" },
+    "answered_by": { "type": "string" },
+    "brain": { "type": "string", "description": "Which brain this file applies to when brains are split, for example the partner slug." },
+    "answers": {
+      "type": "object",
+      "description": "question id → answer. Shape per question type: single → string, multi → string[], number → number, fields → object, list → object[], path → string, confirm_table → { confirmed: bool, edits: object[] }.",
+      "additionalProperties": true
+    },
+    "facts": {
+      "type": "object",
+      "description": "question id → { value, source } for answers taken from the environment.",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["value", "source"],
+        "properties": { "value": {}, "source": { "type": "string" } }
+      }
+    },
+    "changed_from_default": { "type": "array", "items": { "type": "string" } },
+    "skipped": { "type": "array", "items": { "type": "string" }, "description": "question ids whose `when` was false" },
+    "confirmed": { "type": "boolean" },
+    "confirmed_by": { "type": "string" },
+    "confirmed_at": { "type": "string", "format": "date-time" },
+    "applied_at": { "type": "string", "format": "date-time" },
+    "report": { "type": "string", "description": "slug of the onboarding report page" }
+  }
+}

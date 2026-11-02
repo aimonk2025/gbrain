@@ -1,0 +1,284 @@
+# CA firm pack manifest. Read by skills/onboard/SKILL.md.
+# Everything the onboarding needs to turn a generic brain into a CA firm's brain:
+# what to copy in, which skills and jobs to enable, and the question tree whose
+# answers select and toggle those parts. Answers select; nothing here is generated.
+
+pack: ca
+version: 1.0.0
+name: CA firm pack
+industry: Chartered accountancy practice, India
+engine_min: 0.15.1
+reviewed_by: ""          # practising CA who signed off the content. Empty means unreviewed: the onboarding says so at the gate.
+reviewed_on: ""
+
+reference:
+  never_rules: never-rules.md
+  folder_schema: folder-schema.md
+  calendar: compliance-calendar.md
+  positions_template: positions-template.md
+  readme: README.md
+
+load_order:
+  - never-rules.md
+  - folder-schema.md
+  - compliance-calendar.md
+  - checklists/<job>.md
+  - concepts/positions/* (brain)
+  - templates/<name>.md
+
+# Services the firm may offer. Calendar rows are matched by the Job column of compliance-calendar.md.
+services:
+  - id: gstr-1
+    name: GSTR-1 / IFF
+    calendar_rows: ["GSTR-1", "GSTR-1 (QRMP) / IFF"]
+  - id: gstr-3b
+    name: GSTR-3B
+    calendar_rows: ["GSTR-3B", "GSTR-3B (QRMP)"]
+  - id: gst-annual
+    name: GSTR-9 / 9C
+    calendar_rows: ["GSTR-9 / 9C"]
+  - id: tds
+    name: TDS deposits, returns and certificates
+    calendar_rows: ["TDS deposit", "TDS return (24Q, 26Q, 27Q)", "TDS certificates (Form 16, 16A)"]
+  - id: advance-tax
+    name: Advance tax reminders
+    calendar_rows: ["Advance tax"]
+  - id: itr
+    name: Income-tax returns
+    calendar_rows: ["ITR, non-audit", "ITR, audit cases", "ITR, transfer pricing cases"]
+  - id: tax-audit
+    name: Tax audit (3CA/3CB-3CD)
+    calendar_rows: ["Tax audit report (3CA/3CB-3CD)"]
+  - id: statutory-audit
+    name: Statutory and other audits
+    calendar_rows: []
+  - id: roc
+    name: ROC and LLP annual filings
+    calendar_rows: ["AOC-4", "MGT-7 / MGT-7A", "DIR-3 KYC", "LLP Form 11", "LLP Form 8"]
+  - id: payroll
+    name: Payroll compliance (PT, PF, ESI)
+    calendar_rows: ["PT, PF, ESI"]
+  - id: advisory
+    name: Advisory and representation
+    calendar_rows: []
+
+# Folders created in the brain. partner_only folders are excluded from a shared brain.
+folders:
+  - { path: companies, always: true }
+  - { path: people, always: true }
+  - { path: projects, always: true }
+  - { path: projects/notices, always: true }
+  - { path: tasks, always: true }
+  - { path: concepts/law, always: true }
+  - { path: concepts/positions, always: true }
+  - { path: concepts/sops, always: true }
+  - { path: concepts/checklists, always: true }
+  - { path: concepts/lessons, always: true }
+  - { path: templates, always: true }
+  - { path: strategy, always: true, partner_only: true }
+  - { path: finance, always: true }
+  - { path: meetings, always: true }
+  - { path: sources, always: true }
+  - { path: reports, always: true }
+  - { path: inbox, always: true }
+
+checklists:
+  - { id: client-onboarding, file: checklists/client-onboarding.md, services: [any], target: concepts/checklists/client-onboarding }
+  - { id: notice-reply, file: checklists/notice-reply.md, services: [any], target: concepts/checklists/notice-reply }
+  - { id: gstr-3b, file: checklists/gstr-3b.md, services: [gstr-3b], target: concepts/checklists/gstr-3b }
+  - { id: gstr-1, file: checklists/gstr-1.md, services: [gstr-1], target: concepts/checklists/gstr-1 }
+  - { id: tds-return, file: checklists/tds-return.md, services: [tds], target: concepts/checklists/tds-return }
+  - { id: itr, file: checklists/itr.md, services: [itr], target: concepts/checklists/itr }
+  - { id: tax-audit, file: checklists/tax-audit.md, services: [tax-audit], target: concepts/checklists/tax-audit }
+  - { id: roc-annual, file: checklists/roc-annual.md, services: [roc], target: concepts/checklists/roc-annual }
+
+templates:
+  - { id: engagement-letter, file: templates/engagement-letter.md, services: [any], target: templates/engagement-letter, gate: partner }
+  - { id: document-request, file: templates/document-request.md, services: [any], target: templates/document-request, gate: manager }
+  - { id: notice-reply, file: templates/notice-reply.md, services: [any], target: templates/notice-reply, gate: partner }
+  - { id: client-query-gst, file: templates/client-query-gst.md, services: [gstr-1, gstr-3b, gst-annual], target: templates/client-query-gst, gate: manager }
+  - { id: representation-letter, file: templates/representation-letter.md, services: [statutory-audit, tax-audit], target: templates/representation-letter, gate: partner }
+  - { id: monthly-mis, file: templates/monthly-mis.md, services: [gstr-1, gstr-3b, tds, payroll], target: templates/monthly-mis, gate: manager }
+  - { id: fee-revision, file: templates/fee-revision.md, services: [any], target: templates/fee-revision, gate: partner }
+
+skills:
+  - { id: ca-client-onboard, path: ../ca-client-onboard/SKILL.md, services: [any] }
+  - { id: ca-return-cycle, path: ../ca-return-cycle/SKILL.md, services: [gstr-1, gstr-3b, gst-annual, tds, advance-tax, itr, tax-audit, roc, payroll] }
+  - { id: ca-notice-reply, path: ../ca-notice-reply/SKILL.md, services: [any] }
+  - { id: ca-audit-file, path: ../ca-audit-file/SKILL.md, services: [statutory-audit, tax-audit] }
+  - { id: ca-template-fill, path: ../ca-template-fill/SKILL.md, services: [any] }
+  - { id: ca-monday-memo, path: ../ca-monday-memo/SKILL.md, services: [any] }
+  - { id: ca-position-check, path: ../ca-position-check/SKILL.md, services: [any] }
+  - { id: ca-fee-review, path: ../ca-fee-review/SKILL.md, services: [any], partner_only: true }
+
+# Scheduled jobs. Registered through skills/cron-scheduler/SKILL.md, staggered, inside the firm's working hours.
+jobs:
+  - { id: nightly-spawn, skill: ca-return-cycle, phase: "1", schedule: "0 1 * * *", services: [gstr-1, gstr-3b, gst-annual, tds, advance-tax, itr, tax-audit, roc, payroll] }
+  - { id: nightly-maintain, skill: maintain, phase: "all", schedule: "30 1 * * *", services: [any] }
+  - { id: morning-due-list, skill: ca-return-cycle, phase: "2", schedule: "0 8 * * 1-6", services: [any] }
+  - { id: monday-memo, skill: ca-monday-memo, phase: "all", schedule: "0 7 * * 1", services: [any] }
+  - { id: month-close, skill: ca-return-cycle, phase: "6", schedule: "0 20 28-31 * *", services: [gstr-1, gstr-3b, tds, payroll] }
+
+identity:
+  soul_mission:
+    - "Keep every client's facts, positions and deadlines in one place the firm can read without me."
+    - "Draft, file pages and keep the record. Never file, send or advise on my own."
+    - "Every number shows its source. When the brain does not know, say so."
+  heartbeat_from_jobs: true
+  access_tiers:
+    partner: [companies, people, projects, tasks, concepts, templates, strategy, finance, meetings, sources, reports]
+    manager: [companies, people, projects, tasks, concepts, templates, finance, meetings, sources, reports]
+    article: [companies, people, projects, tasks, concepts, templates, finance, meetings, sources]
+    client: []
+
+demo:
+  dir: demo
+  slug_prefix: demo-
+  queries:
+    - { kind: search, text: "which clients have an open notice", expect: "companies/demo-widget-traders" }
+    - { kind: graph, slug: companies/demo-widget-traders, depth: 2, expect: "people/demo-r-shah" }
+    - { kind: search, text: "firm position on ITC claimed on 2B basis", expect: "concepts/positions/demo-itc-2b-basis" }
+    - { kind: skill, skill: ca-notice-reply, input: "projects/notices/demo-widget-traders-asmt-10-2026-10-28", stop_at: gate }
+
+# The question tree. depends_on lists question ids that must be answered first.
+# when: a condition on earlier answers; the question is skipped when it is false.
+# default: the recommended answer shown under the question. "facts" means: taken from the environment first.
+# effects: what the applier does with the answer. Ops are defined in skills/onboard/SKILL.md.
+questions:
+  - id: firm
+    title: The firm
+    type: fields
+    fields: [firm_name, firm_address, firm_city, partner_membership_no, firm_registration_no]
+    default: facts
+    facts_from: [USER.md, SOUL.md, existing firm page]
+    effects:
+      - { op: create_firm_page }
+      - { op: set_template_fields, fields: [firm_name, firm_address, partner_membership_no] }
+
+  - id: staff
+    title: Who works here
+    type: list
+    item_fields: [name, role]
+    role_options: [partner, manager, article, admin]
+    default: facts
+    facts_from: [existing people pages with role]
+    effects:
+      - { op: create_people_pages }
+
+  - id: services
+    title: Services the firm provides
+    type: multi
+    options: [gstr-1, gstr-3b, gst-annual, tds, advance-tax, itr, tax-audit, statutory-audit, roc, payroll, advisory]
+    default: [gstr-1, gstr-3b, gst-annual, tds, itr, tax-audit, statutory-audit, roc]
+    effects:
+      - { op: select_by_services, targets: [calendar_rows, checklists, templates, skills, jobs] }
+
+  - id: partners
+    title: Number of partners
+    type: number
+    default: facts
+    facts_from: [staff]
+    effects: []
+
+  - id: client_sharing
+    title: Do partners share clients
+    depends_on: [partners]
+    when: { partners: ">1" }
+    type: single
+    options: [separate, shared]
+    default: separate
+    note: "The brain has no per-user locks inside one brain. 'separate' means one brain per partner. 'shared' means one brain for all, with strategy/ kept out of it and partner-only skills run elsewhere."
+    effects:
+      - { op: split_brains, by: partner, when: separate }
+      - { op: exclude_partner_only, when: shared }
+
+  - id: review_chain
+    title: Who reviews before filing
+    depends_on: [staff]
+    type: single
+    options: [manager-then-partner, partner-only]
+    default_rule: "manager-then-partner when staff has a manager, else partner-only"
+    effects:
+      - { op: set_gates }
+
+  - id: books_system
+    title: Where client books live
+    type: multi
+    options: [tally-prime, zoho-books, excel, other]
+    default: [tally-prime]
+    effects:
+      - { op: set_config, key: books_systems }
+
+  - id: client_export
+    title: Client master export
+    type: path
+    optional: true
+    note: "A CSV or spreadsheet of clients from the practice software or billing: name, PAN, GSTIN, services, partner. The brain reads it; it never asks for what the file already says."
+    default: facts
+    facts_from: [the file]
+    effects:
+      - { op: import_client_master }
+
+  - id: calendar_confirm
+    title: Confirm the due dates for the services you offer
+    depends_on: [services]
+    type: confirm_table
+    source: compliance-calendar.md
+    default: confirm
+    note: "Rows are the standard dates as of the pack date. Extensions and state-specific dates must be edited here, with the notification as source."
+    effects:
+      - { op: write_calendar }
+
+  - id: search_mode
+    title: Search mode
+    type: single
+    options: [keyword-graph, semantic]
+    default: keyword-graph
+    note: "semantic sends chunk text to the embedding API and queries to a small model for expansion. keyword-graph sends nothing out."
+    effects:
+      - { op: set_config, key: embeddings, value_from_answer: { keyword-graph: off, semantic: on } }
+      - { op: set_config, key: query_expansion, value_from_answer: { keyword-graph: off, semantic: on } }
+
+  - id: hosting
+    title: Where the brain runs
+    depends_on: [partners, client_sharing]
+    type: single
+    options: [local-file, postgres]
+    default_rule: "postgres when client_sharing is shared or the firm has more than one machine, else local-file"
+    effects:
+      - { op: set_engine }
+
+  - id: review_cadence
+    title: How often templates and positions are reviewed
+    type: fields
+    fields: [template_review_days, position_review_days]
+    default: { template_review_days: 365, position_review_days: 365 }
+    effects:
+      - { op: set_review_days }
+
+  - id: risk_tiers
+    title: Client risk tiers
+    type: fields
+    fields: [tier_a, tier_b, tier_c]
+    default:
+      tier_a: "high fee or listed or group company; partner reviews every filing"
+      tier_b: "regular client; manager reviews, partner signs"
+      tier_c: "small or irregular; article prepares, manager reviews and signs"
+    effects:
+      - { op: write_page, target: strategy/client-tiers }
+
+  - id: quiet_hours
+    title: Quiet hours and timezone
+    type: fields
+    fields: [start, end, timezone]
+    default: { start: "21:00", end: "08:00", timezone: "Asia/Kolkata" }
+    effects:
+      - { op: set_config, key: quiet_hours }
+
+  - id: demo
+    title: Run the demo before importing real data
+    type: single
+    options: [run, skip]
+    default: run
+    effects:
+      - { op: load_demo, when: run }

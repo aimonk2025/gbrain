@@ -5,6 +5,15 @@ pages Claude reads before every job, plus eight skills (`skills/ca-*/SKILL.md`)
 that do the work. Nothing here is advice to a client. It is the firm's way of
 working, written down once so every job runs the same way.
 
+## pack.yaml and onboarding
+
+`pack.yaml` is the manifest: services, folders, checklists, templates, skills,
+scheduled jobs, identity defaults, the demo dataset and the onboarding question
+tree. `skills/onboard/SKILL.md` reads it, runs the interview in rounds, writes a
+confirmed answers file (`skills/onboard/answers.schema.json`), applies the
+answers deterministically, and can load `demo/` to show the brain working before
+real data goes in. `test/ca-pack.test.ts` checks the manifest against the files.
+
 ## What Claude loads before every CA job, in this order
 
 1. `skills/ca-pack/never-rules.md` (the lines that are never crossed)

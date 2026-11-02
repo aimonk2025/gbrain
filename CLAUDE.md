@@ -118,6 +118,8 @@ strict behavior when unset.
 - `skills/data-research/SKILL.md` — Structured data research: email-to-tracker pipeline with parameterized YAML recipes
 - `skills/minion-orchestrator/SKILL.md` — Background job orchestration: submit, fan out children with depth/cap/timeouts, collect results via child_done inbox
 - `skills/ca-pack/` — CA firm pack reference pages: `README.md` (load order), `never-rules.md`, `folder-schema.md`, `compliance-calendar.md`, `positions-template.md`, `checklists/` (8 job types), `templates/` (7 versioned templates with `fields`, `gate`, `last_reviewed`). Read by every `ca-*` skill before a job.
+- `skills/ca-pack/pack.yaml` — Pack manifest: services with calendar rows, folders, checklists, templates, skills, jobs, identity defaults, `demo/` dataset (19 fictional pages, `demo: true`, `demo-` prefix) and the onboarding question tree with `depends_on`, `when`, defaults and `effects`. Validated by `test/ca-pack.test.ts`.
+- `skills/onboard/SKILL.md` — Industry onboarding from a pack manifest: frontier-based rounds with recommended answers, facts before questions, `answers.json` (shape in `answers.schema.json`, example in `examples/answers.ca.json`) confirmed at the gate, deterministic apply with a documented effect-op table, demo load/show/wipe.
 - `skills/ca-client-onboard/`, `ca-return-cycle/`, `ca-notice-reply/`, `ca-audit-file/`, `ca-template-fill/`, `ca-monday-memo/`, `ca-position-check/`, `ca-fee-review/` — The eight CA firm skills. Every one stops at a human gate before anything leaves the firm; none files, sends or invents a figure. Routed under "CA firm pack" in `skills/RESOLVER.md`.
 - `templates/` — SOUL.md, USER.md, ACCESS_POLICY.md, HEARTBEAT.md templates
 - `skills/migrations/` — Version migration files with feature_pitch YAML frontmatter
@@ -219,6 +221,7 @@ parity), `test/cli.test.ts` (CLI structure), `test/config.test.ts` (config redac
 `test/sync.test.ts` (sync logic + v0.12.3 regression guard asserting top-level `engine.transaction` is not called),
 `test/doctor.test.ts` (doctor command + v0.12.3 assertions that `jsonb_integrity` scans the four v0.12.0 write sites and `markdown_body_completeness` is present),
 `test/utils.test.ts` (shared SQL utilities + `tryParseEmbedding` null-return and single-warn semantics),
+`test/ca-pack.test.ts` (pack manifest: referenced files exist, service ids defined, calendar rows match, question tree well formed, effect ops documented in the onboard skill, demo pages flagged and prefixed, example answers match the schema — 11 cases),
 `test/build-llms.test.ts` (llms.txt/llms-full.txt generator: path resolution, idempotence, spec shape, regen-drift guard, content contract, AGENTS.md install-path mirror, size-budget enforcement — 7 cases).
 
 E2E tests (`test/e2e/`): Run against real Postgres+pgvector. Require `DATABASE_URL`.
