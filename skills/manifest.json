@@ -143,6 +143,46 @@
       "name": "skillpack-check",
       "path": "skillpack-check/SKILL.md",
       "description": "Agent-readable gbrain health report. Wraps doctor + apply-migrations --list into one JSON blob with exit codes. Cron-friendly for morning-briefing pipelines."
+    },
+    {
+      "name": "ca-client-onboard",
+      "path": "ca-client-onboard/SKILL.md",
+      "description": "Bring a new CA-firm client into the brain: conflict check, client master, contacts, calendar mapping, engagement letter at the partner gate, first jobs"
+    },
+    {
+      "name": "ca-return-cycle",
+      "path": "ca-return-cycle/SKILL.md",
+      "description": "Recurring compliance cycle for a CA firm: spawn job pages from the calendar, morning due list, forward-only status, reviewer gate, ARN on the timeline, billing note, lessons"
+    },
+    {
+      "name": "ca-notice-reply",
+      "path": "ca-notice-reply/SKILL.md",
+      "description": "Handle a department notice for a client: raw notice stored, deadline task, point-wise facts, positions, law, evidence, templated draft, manager and partner gates, filing record, follow-up"
+    },
+    {
+      "name": "ca-audit-file",
+      "path": "ca-audit-file/SKILL.md",
+      "description": "Audit engagement memory: engagement page, requirement list, workpaper index pointing at the DMS, issues log, representations, partner sign-off, UDIN record"
+    },
+    {
+      "name": "ca-template-fill",
+      "path": "ca-template-fill/SKILL.md",
+      "description": "Fill a versioned template from brain pages only: refuse stale versions, leave missing fields visible, approval list at the template's gate, usage logged"
+    },
+    {
+      "name": "ca-monday-memo",
+      "path": "ca-monday-memo/SKILL.md",
+      "description": "One Monday memo per partner from pages alone: filed, notices open, late and waiting, hours vs fees when exported, fees to bill, reviews due, decisions waiting"
+    },
+    {
+      "name": "ca-position-check",
+      "path": "ca-position-check/SKILL.md",
+      "description": "Quote firm positions only from approved pages, say when none exists, draft positions for approval, and write impact notes when a new circular or ruling lands"
+    },
+    {
+      "name": "ca-fee-review",
+      "path": "ca-fee-review/SKILL.md",
+      "description": "Partner-only profitability review from imported time and billing exports: fee vs hours per client, candidates by the pricing page's rules, fee letters at the gate, decisions recorded"
     }
   ],
   "dependencies": {

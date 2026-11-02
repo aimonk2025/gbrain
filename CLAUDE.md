@@ -117,6 +117,8 @@ strict behavior when unset.
 - `skills/webhook-transforms/SKILL.md` — External events to brain signals
 - `skills/data-research/SKILL.md` — Structured data research: email-to-tracker pipeline with parameterized YAML recipes
 - `skills/minion-orchestrator/SKILL.md` — Background job orchestration: submit, fan out children with depth/cap/timeouts, collect results via child_done inbox
+- `skills/ca-pack/` — CA firm pack reference pages: `README.md` (load order), `never-rules.md`, `folder-schema.md`, `compliance-calendar.md`, `positions-template.md`, `checklists/` (8 job types), `templates/` (7 versioned templates with `fields`, `gate`, `last_reviewed`). Read by every `ca-*` skill before a job.
+- `skills/ca-client-onboard/`, `ca-return-cycle/`, `ca-notice-reply/`, `ca-audit-file/`, `ca-template-fill/`, `ca-monday-memo/`, `ca-position-check/`, `ca-fee-review/` — The eight CA firm skills. Every one stops at a human gate before anything leaves the firm; none files, sends or invents a figure. Routed under "CA firm pack" in `skills/RESOLVER.md`.
 - `templates/` — SOUL.md, USER.md, ACCESS_POLICY.md, HEARTBEAT.md templates
 - `skills/migrations/` — Version migration files with feature_pitch YAML frontmatter
 - `src/commands/publish.ts` — Deterministic brain page publisher (code+skill pair, zero LLM calls)

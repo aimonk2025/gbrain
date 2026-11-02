@@ -59,6 +59,22 @@ This is the dispatcher. Skills are the implementation. **Read the skill file bef
 | Webhook setup, external event processing | `skills/webhook-transforms/SKILL.md` |
 | "Spawn agent", "background task", "parallel tasks", "steer agent", "pause/resume agent" | `skills/minion-orchestrator/SKILL.md` |
 
+## CA firm pack
+
+Read `skills/ca-pack/README.md` once per session before any of these. Every skill
+below stops at a human gate before anything leaves the firm.
+
+| Trigger | Skill |
+|---------|-------|
+| "New client", "onboard client", "client onboarding" | `skills/ca-client-onboard/SKILL.md` |
+| "Run this month's returns", "due list", "what is late", "mark filed" | `skills/ca-return-cycle/SKILL.md` |
+| "Notice received", "reply to this notice", "show cause", "ASMT-10", "143(1)" | `skills/ca-notice-reply/SKILL.md` |
+| "Start the audit", "audit file", "working papers index", "issues log" | `skills/ca-audit-file/SKILL.md` |
+| "Fill the template", "draft the letter", "which template", "template review due" | `skills/ca-template-fill/SKILL.md` |
+| "Monday memo", "weekly memo", "partner memo" | `skills/ca-monday-memo/SKILL.md` |
+| "Our position on", "do we have a stand on", "new circular", "record a position" | `skills/ca-position-check/SKILL.md` |
+| "Fee review", "client profitability", "hours vs fees", "revise the fee" (partner only) | `skills/ca-fee-review/SKILL.md` |
+
 ## Setup & migration
 
 | Trigger | Skill |
@@ -89,7 +105,8 @@ When multiple skills could match:
 2. If the user mentions a URL, route by content type (link → idea-ingest, video → media-ingest)
 3. If the user mentions a person/company, check if enrich or query fits better
 4. Chaining is explicit in each skill's Phases section
-5. When in doubt, ask the user
+5. In a CA-firm brain, a `ca-*` skill wins over a generic one for the same intent (ca-notice-reply over ingest for a notice PDF, ca-monday-memo over briefing on Monday)
+6. When in doubt, ask the user
 
 ## Conventions (cross-cutting)
 
@@ -99,3 +116,4 @@ These apply to ALL brain-writing skills:
 - `skills/conventions/subagent-routing.md` — when to use Minions vs inline work
 - `skills/_brain-filing-rules.md` — where files go
 - `skills/_output-rules.md` — output quality standards
+- `skills/ca-pack/never-rules.md` — CA firm never-rules (all `ca-*` skills)

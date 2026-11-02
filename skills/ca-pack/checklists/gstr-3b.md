@@ -1,0 +1,20 @@
+# Checklist: GSTR-3B (monthly)
+
+Job opens 15 days before due. Reviewer signs before filing.
+
+1. [ ] Books for the period received from client (proof: file in `sources/`, date on job timeline)
+2. [ ] Sales register totals agree to GSTR-1 filed or IFF for the period (proof: reconciliation note with both figures and sources)
+3. [ ] GSTR-2B for the period downloaded and stored (proof: `sources/<date>-<client>-gstr2b-<period>`)
+4. [ ] 2B vs purchase register match run: matched, mismatch, missing-in-books, missing-in-2B, each with count and tax amount (proof: match table on the job page)
+5. [ ] Firm position on ITC applied as written in `concepts/positions/itc-2b-basis` or the firm's current equivalent (proof: link to the position page and its date)
+6. [ ] Blocked credits reviewed against the firm's blocked-heads list (proof: list of heads checked, amounts reversed if any)
+7. [ ] RCM liability computed where applicable (proof: RCM table or "none, because" with source)
+8. [ ] 180-day rule and Rule 42/43 reversals checked (proof: computation or "not applicable, because")
+9. [ ] Client queries sent for open items via `templates/client-query-gst`, replies filed (proof: query and reply in `sources/`, dates on timeline)
+10. [ ] Draft 3B prepared: 3.1, 3.2, 4, 5, 6 with every figure sourced to a line in the workings (proof: workings file in `sources/`)
+11. [ ] Cross-foot check: tax payable vs cash and credit utilisation (proof: the check line on the job page)
+12. [ ] Interest and late fee computed if late (proof: computation with dates)
+13. [ ] ◆ Reviewer says yes on the job page (proof: reviewer name and timestamp on timeline)
+14. [ ] ◆ Filed by a person from the firm's login · ARN recorded (proof: ARN and date on client timeline)
+15. [ ] Billing note added: in retainer, or amount (proof: fee line on job page)
+16. [ ] Lessons: anything the reviewer changed is written to `concepts/lessons/` (proof: link, or "no changes")
